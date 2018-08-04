@@ -1,0 +1,130 @@
+Added Component: Designator=C1(CAP200)
+Add component. Clean all parameters for all variants
+Added Component: Designator=C2(CAP200)
+Add component. Clean all parameters for all variants
+Added Component: Designator=C3(CAP200)
+Add component. Clean all parameters for all variants
+Added Component: Designator=C4(CAP200)
+Add component. Clean all parameters for all variants
+Added Component: Designator=C5(CAP200)
+Add component. Clean all parameters for all variants
+Added Component: Designator=C6(CAP200)
+Add component. Clean all parameters for all variants
+Added Component: Designator=C7(CAP200)
+Add component. Clean all parameters for all variants
+Added Component: Designator=C8(CAP200)
+Add component. Clean all parameters for all variants
+Added Component: Designator=C9(CAP200)
+Add component. Clean all parameters for all variants
+Added Component: Designator=C10(CAP200)
+Add component. Clean all parameters for all variants
+Added Component: Designator=C11(CAP200)
+Add component. Clean all parameters for all variants
+Added Component: Designator=C12(CAP200)
+Add component. Clean all parameters for all variants
+Added Component: Designator=iin(SIP2)
+Add component. Clean all parameters for all variants
+Added Component: Designator=in(SIP2)
+Add component. Clean all parameters for all variants
+Added Component: Designator=oout(SIP2)
+Add component. Clean all parameters for all variants
+Added Component: Designator=out(SIP2)
+Add component. Clean all parameters for all variants
+Added Component: Designator=R1(RES400)
+Add component. Clean all parameters for all variants
+Added Component: Designator=R2(RES400)
+Add component. Clean all parameters for all variants
+Added Component: Designator=R3(RES400)
+Add component. Clean all parameters for all variants
+Added Component: Designator=R4(RES400)
+Add component. Clean all parameters for all variants
+Added Component: Designator=R5(RES400)
+Add component. Clean all parameters for all variants
+Added Component: Designator=R6(RES400)
+Add component. Clean all parameters for all variants
+Added Component: Designator=R7(RES400)
+Add component. Clean all parameters for all variants
+Added Component: Designator=R8(RES400)
+Add component. Clean all parameters for all variants
+Added Component: Designator=R9(RES400)
+Add component. Clean all parameters for all variants
+Added Component: Designator=R10(RES400)
+Add component. Clean all parameters for all variants
+Added Component: Designator=R11(RES400)
+Add component. Clean all parameters for all variants
+Added Component: Designator=R12(RES400)
+Add component. Clean all parameters for all variants
+Added Pin To Net: NetName=NetC1_1 Pin=C1-1
+Added Pin To Net: NetName=NetC1_1 Pin=C2-1
+Added Pin To Net: NetName=NetC1_1 Pin=R2-2
+Added Pin To Net: NetName=NetC1_1 Pin=R3-2
+Added Pin To Net: NetName=NetC1_1 Pin=R4-1
+Added Pin To Net: NetName=NetC1_1 Pin=R5-1
+Added Net: Name=NetC1_1
+Added Pin To Net: NetName=NetC1_2 Pin=C1-2
+Added Pin To Net: NetName=NetC1_2 Pin=C2-2
+Added Pin To Net: NetName=NetC1_2 Pin=C3-1
+Added Net: Name=NetC1_2
+Added Pin To Net: NetName=NetC3_2 Pin=C3-2
+Added Pin To Net: NetName=NetC3_2 Pin=in-2
+Added Pin To Net: NetName=NetC3_2 Pin=out-2
+Added Pin To Net: NetName=NetC3_2 Pin=R7-2
+Added Pin To Net: NetName=NetC3_2 Pin=R8-2
+Added Net: Name=NetC3_2
+Added Pin To Net: NetName=NetC4_1 Pin=C4-1
+Added Pin To Net: NetName=NetC4_1 Pin=in-1
+Added Pin To Net: NetName=NetC4_1 Pin=R1-1
+Added Net: Name=NetC4_1
+Added Pin To Net: NetName=NetC4_2 Pin=C4-2
+Added Pin To Net: NetName=NetC4_2 Pin=C5-1
+Added Pin To Net: NetName=NetC4_2 Pin=C6-1
+Added Net: Name=NetC4_2
+Added Pin To Net: NetName=NetC5_2 Pin=C5-2
+Added Pin To Net: NetName=NetC5_2 Pin=C6-2
+Added Pin To Net: NetName=NetC5_2 Pin=C7-2
+Added Pin To Net: NetName=NetC5_2 Pin=C8-1
+Added Pin To Net: NetName=NetC5_2 Pin=R9-1
+Added Net: Name=NetC5_2
+Added Pin To Net: NetName=NetC7_1 Pin=C7-1
+Added Pin To Net: NetName=NetC7_1 Pin=C8-2
+Added Pin To Net: NetName=NetC7_1 Pin=C9-1
+Added Net: Name=NetC7_1
+Added Pin To Net: NetName=NetC9_2 Pin=C9-2
+Added Pin To Net: NetName=NetC9_2 Pin=out-1
+Added Pin To Net: NetName=NetC9_2 Pin=R6-2
+Added Net: Name=NetC9_2
+Added Pin To Net: NetName=NetC10_1 Pin=C10-1
+Added Pin To Net: NetName=NetC10_1 Pin=C11-1
+Added Pin To Net: NetName=NetC10_1 Pin=oout-1
+Added Pin To Net: NetName=NetC10_1 Pin=R11-2
+Added Pin To Net: NetName=NetC10_1 Pin=R12-2
+Added Net: Name=NetC10_1
+Added Pin To Net: NetName=NetC10_2 Pin=C10-2
+Added Pin To Net: NetName=NetC10_2 Pin=C11-2
+Added Pin To Net: NetName=NetC10_2 Pin=C12-1
+Added Net: Name=NetC10_2
+Added Pin To Net: NetName=NetC12_2 Pin=C12-2
+Added Pin To Net: NetName=NetC12_2 Pin=iin-2
+Added Pin To Net: NetName=NetC12_2 Pin=oout-2
+Added Net: Name=NetC12_2
+Added Pin To Net: NetName=Netiin_1 Pin=iin-1
+Added Pin To Net: NetName=Netiin_1 Pin=R10-1
+Added Net: Name=Netiin_1
+Added Pin To Net: NetName=NetR1_2 Pin=R1-2
+Added Pin To Net: NetName=NetR1_2 Pin=R2-1
+Added Pin To Net: NetName=NetR1_2 Pin=R3-1
+Added Net: Name=NetR1_2
+Added Pin To Net: NetName=NetR4_2 Pin=R4-2
+Added Pin To Net: NetName=NetR4_2 Pin=R5-2
+Added Pin To Net: NetName=NetR4_2 Pin=R6-1
+Added Net: Name=NetR4_2
+Added Pin To Net: NetName=NetR7_1 Pin=R7-1
+Added Pin To Net: NetName=NetR7_1 Pin=R8-1
+Added Pin To Net: NetName=NetR7_1 Pin=R9-2
+Added Net: Name=NetR7_1
+Added Pin To Net: NetName=NetR10_2 Pin=R10-2
+Added Pin To Net: NetName=NetR10_2 Pin=R11-1
+Added Pin To Net: NetName=NetR10_2 Pin=R12-1
+Added Net: Name=NetR10_2
+Added Class: Name=esquematico
+Added Room: Name=esquematico
