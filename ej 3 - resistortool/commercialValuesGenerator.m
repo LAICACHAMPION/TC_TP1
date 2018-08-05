@@ -1,6 +1,6 @@
-function [ comercialValues ] = comercialValuesGenerator( tolerancia)
-%UNTITLED2 Summary of this function goes here
-%   Detailed explanation goes here
+function [ commercialValues ] = commercialValuesGenerator( tolerancia)
+%COMMERCIAL VALUES GENERATOR: devuelve los valores comerciales para las tolerancias
+% 1,2,5,10 y 20
 paso=0;
 vDecada=0;
 redondeo=1;
@@ -19,13 +19,13 @@ end
          paso=96;
          redondeo=2
      otherwise
-         comercialValues=0;
+         commercialValues=0;
  end
  if paso~=0
-     comercialValues=1;
+     commercialValues=1;
      vDecada=10^(1/paso);
      for i=1:(paso-1)
-         comercialValues=[comercialValues,round((vDecada^i),redondeo)];         
+         commercialValues=[commercialValues,round((vDecada^i),redondeo)];         
      end
  end
  
