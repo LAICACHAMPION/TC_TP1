@@ -65,16 +65,16 @@ for exp1 = magr-1:magr
             else
                 abserror = abs((r-R1)/r);
                  if (abserror < maxerror)
-                            if isempty(ismember(find(r1==R2), find(r2==R1)))                             
+                            if isempty(find((r1==R2)==(r2==R1),1))                    
                                 k=find(error == maxerror);
                                 if size(k,2)>1
                                     k=k(1);
                                 end
             
-                            r1(k) = R1; r2(k) = 0; error(k)=abserror;
+                            r1(k) = R1; r2(k) = R2; error(k)=abserror;
                             maxerror = max(error);
                             end
-                end
+                        end
                 break; %una vez que me pase de r ya no sigo
             end
         end

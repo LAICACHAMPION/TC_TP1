@@ -8,6 +8,8 @@ if nargin==0
     tolerancia=10;
 end
  switch tolerancia
+     case 20
+         paso=6;
      case 10
          paso=12;
      case 5

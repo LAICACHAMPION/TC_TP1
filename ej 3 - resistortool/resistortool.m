@@ -1,4 +1,4 @@
-function [ r1, r2, error, PorS ] = resistortool( r, tolerance, topology )
+function [ r1, r2, error, PorS ] = resistortool( r, tolerance, topology, N )
 % RESISTOR TOOL devuelve la mejor aproximacion al valor de r con los valores
 % comerciales existentes para la tolerancia indicada y con la topologia 
 % indicada (serie/paralelo)
@@ -8,19 +8,25 @@ function [ r1, r2, error, PorS ] = resistortool( r, tolerance, topology )
 %  aproxime mejor el valor pedido
 %    si el valor de r no es valido (<=0, o no es un unico numero) se 
 % devuelve -1 en todos los resultados
+%   si la topologia o la tolerancia se reciben pero no son arreglos de 1x1,
+% se devuelve error
 
 if nargin == 0
+    r1 = -1; r2 = -1; error = -1; PorS = '-1';
     return;
 end
 
-if size(size(r),2) ~= 2 || size(r, 1) ~= 1 || size(r,2) ~= 1 || r <= 0 
-    r1 = -1; r2 = -1; error = -1; PorS = '-1';
+if size(size(r),2) ~= 2 || size(r, 1) ~= 1 || size(r,2) ~= 1 || r <= 0 ||...
+    size(size(r),2) ~= 2 || size(r, 1) ~= 1 || size(r,2) ~= 1 || r <= 0 ...
+    || isnan(r)
+   r1 = -1; r2 = -1; error = -1; PorS = '-1';
    return;
 end
 
 t = 0;
 if nargin >= 2
-    if ~isempty(ismember(tolerance,[1,2 ,5, 10]))
+    if size(size(r),2) ~= 2 || size(r, 1) ~= 1 || size(r,2) ~= 1 && ...
+            ismember(tolerance,[1,2,5,10,20])
         t = tolerance; 
     end
 end;
@@ -32,19 +38,19 @@ values = commercialValuesGenerator(t);
 minr = 0.5; maxr = 10*10^6;
 
 PorS = 0;
-if nargin == 3
+if nargin >= 3
     if topology == 'p'
-        [r1, r2, error] = parallelresistortool(r, values, minr, maxr);
+        [r1, r2, error] = parallelresistortool(r, values, minr, maxr, N);
         PorS = 'p';
     elseif topology == 's'
-        [r1, r2, error] = seriesresistortool(r, values, minr, maxr);
+        [r1, r2, error] = seriesresistortool(r, values, minr, maxr, N);
         PorS = 's';
     end
 end
 
 if PorS == 0
-    [sr1, sr2, serror] = seriesresistortool(r, values, minr, maxr);
-    [pr1, pr2, perror] = parallelresistortool(r, values, minr, maxr);
+    [sr1, sr2, serror] = seriesresistortool(r, values, minr, maxr, N);
+    [pr1, pr2, perror] = parallelresistortool(r, values, minr, maxr, N);
     
     if serror < perror
         r1 = sr1; r2 = sr2; error = serror; PorS = 's';
