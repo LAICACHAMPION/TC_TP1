@@ -44,6 +44,8 @@ s = tf('s');
 H = (c3^2*r3^2*s^2 + 1)/(c3^2*r3^2*s^2 + 4*c3*r3*s + 1);
 opt = bodeoptions();
 opt.FreqUnits = 'Hz';
-bode(H, opt)
+bode(H, opt);
+step(H);
+impulse(H);
 
 
