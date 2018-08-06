@@ -1,4 +1,4 @@
-f = 8 * 1000;   %Frecuencia de la senial cuadrada
+f = 4 * 8000;   %Frecuencia de la senial cuadrada
 A = 10; %amplitud pico a pico de la senial cuadrada
 
 N  = 20; %cantidad de armonicos que se muestran

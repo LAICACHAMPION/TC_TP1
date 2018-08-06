@@ -110,5 +110,132 @@
 Filtro pasabajos pasivo
 \end_layout
 
+\begin_layout Standard
+Funcion transferencia: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $H(s)=\frac{\frac{1}{sC}}{\frac{1}{sC}+R}=\frac{1}{sCR+1}=\frac{1}{\frac{s}{\frac{1}{RC}}+1}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+con la frecuencia de corte 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$f_0 = 
+\backslash
+frac{1}{2
+\backslash
+pi RC}$
+\end_layout
+
+\end_inset
+
+.
+ Seleccionamos 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$R=510
+\backslash
+Omega$ y $C=4,7nF$
+\end_layout
+
+\end_inset
+
+ con lo que obtenemos 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$f_0 = 
+\backslash
+frac{1}{2
+\backslash
+pi 
+\backslash
+cdot 4.7nF 
+\backslash
+cdot 510
+\backslash
+Omega} = 66.4K
+\backslash
+Omega$
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename imagenes/espectro senial cuadrada 32K.PNG
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Espectro de 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+se
+\backslash
+~nal
+\end_layout
+
+\end_inset
+
+ de entrada (cuadrada 32KHz, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+10V_pp
+\end_layout
+
+\end_inset
+
+ sin valor medio)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \end_body
 \end_document
