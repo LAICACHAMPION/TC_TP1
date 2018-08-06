@@ -106,8 +106,12 @@
 
 \begin_body
 
-\begin_layout Subsection
+\begin_layout Section
 Filtro notch pasivo (R)
+\end_layout
+
+\begin_layout Subsection
+Función de transferencia y elección de los valores para los componentes
 \end_layout
 
 \begin_layout Standard
@@ -195,7 +199,11 @@ Se obtiene el siguiente sistema de ecuaciones:
 
 \begin_layout Standard
 Se corre el siguiente código de matlab para hallar la transferencia del
- sistema: 
+ siste
+\begin_inset Formula $ $
+\end_inset
+
+ma: 
 \end_layout
 
 \begin_layout Standard
@@ -509,9 +517,7 @@ frac{s^2 +
 \backslash
 frac{1}{{C_{3}}^2
 \backslash
-, {R_{3}}^2
-\backslash
-, s^2}}{s^2 + 
+, {R_{3}}^2}}{s^2 + 
 \backslash
 frac{4
 \backslash
@@ -534,9 +540,6 @@ frac{1}{{C_{3}}^2
 \begin_layout Standard
 resulta ser la transferencia de un filtro notch de tipo estándar, con frecuencia
  de corte 
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -588,6 +591,82 @@ frac{1}{{C_{3}}
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Dado que deseamos que la frecuencia de corte del filtro sea 10,8 kHz, decidimos
+ utilizar los valores de capacitancia 
+\begin_inset Formula $C_{3}=82nF$
+\end_inset
+
+ y 
+\begin_inset Formula $R3=180\varOmega$
+\end_inset
+
+, valores comerciales, que originarían una frecuencia de corte teórica para
+ el filtro de 10,782 kHz.
+ Nótese que con estos valores dados el resto de las resistencias y capacitancias
+ quedarían fijadas en 
+\begin_inset Formula $C_{1}=C_{2}=41nF$
+\end_inset
+
+ y 
+\begin_inset Formula $R_{1}=R_{2}=360\varOmega$
+\end_inset
+
+por la condición dicha anteriormente.
+ 
+\end_layout
+
+\begin_layout Standard
+Con estos valores fijados, podemos realizar un análisis de la respuesta
+ en frecuencia y la respuesta al impulso y al escalón en tiempo mediante
+ antitransformadas de laplace.
+ Efectivamente, dada la relacion
+\begin_inset Formula $Y(s)=X(s)\cdot H(s)$
+\end_inset
+
+donde X(s) =1 o X(s) = 1/s respectivamente, por lo que y(t) =
+\end_layout
+
+\begin_layout Subsection
+Diseño de la placa
+\end_layout
+
+\begin_layout Standard
+Dada la disponibilidad de componentes en el pañol y buscando minimizar la
+ cantidad y el coste de los componentes a utilizar, se decidió implementar
+ el filtro de la siguiente manera:
+\end_layout
+
+\begin_layout Standard
+Donde tanto
+\begin_inset Formula $R_{1}$
+\end_inset
+
+como 
+\begin_inset Formula $R_{2}$
+\end_inset
+
+fueron implementadas con dos resistencias en serie, cada una del mismo valor
+ que 
+\begin_inset Formula $R_{3}=180\varOmega$
+\end_inset
+
+, y 
+\begin_inset Formula $C_{1}$
+\end_inset
+
+y 
+\begin_inset Formula $C_{2}$
+\end_inset
+
+con dos capacitores cada uno del valor de 
+\begin_inset Formula $C_{3}=82nF$
+\end_inset
+
+ también en serie para lograr las relaciones mencionadas en la subsección
+ anterior.
 \end_layout
 
 \end_body
