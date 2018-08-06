@@ -1,0 +1,13 @@
+* C:\Users\mlste\Documents\ITBA\6 Cuatrimestre\TC\TC_TP1\ej 2\simulacion filtro pasabajos rc 64k.asc
+R1 cap in {mc{990, tolr}}
+C1 cap 0 {mc{3.9n, tolc}}
+V1 in 0 PULSE(-5 5 0 0.0001n 0.0001n {0.5*T} {T}) AC 1
+.param f={680K} ; frecuencia de entrada
+.param T {1/f}
+.ac dec 50 1 100MEG
+* Filtro pasabajos pasivos RC con frecuencia de corte 64KHz
+.param tolr=0.05
+.param tolc=0.1
+.step param run 1 100 1
+.backanno
+.end
