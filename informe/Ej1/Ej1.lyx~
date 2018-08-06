@@ -509,7 +509,9 @@ frac{s^2 +
 \backslash
 frac{1}{{C_{3}}^2
 \backslash
-, {R_{3}}^2}}{s^2 + 
+, {R_{3}}^2
+\backslash
+, s^2}}{s^2 + 
 \backslash
 frac{4
 \backslash

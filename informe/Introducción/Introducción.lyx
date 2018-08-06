@@ -178,6 +178,51 @@ s específica, centrada en la frecuencia de corte.
 \end_layout
 
 \begin_layout Standard
+Para el filtro notch, la función transferencia característica puede ser
+ expresada como:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $H(s)=\frac{s^{2}+\omega_{z}^{2}}{s^{2}+\frac{\omega_{p}}{Q}s+\omega_{p}^{2}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+De los valores de 
+\begin_inset Formula $\omega$
+\end_inset
+
+es que se puede seguir caracterizando al filtro, generando subcategorías
+ dentro de la categoría notch:
+\end_layout
+
+\begin_layout Itemize
+Si 
+\begin_inset Formula $\omega_{z}=\omega_{p}$
+\end_inset
+
+ el filtro se llama standard notch.
+\end_layout
+
+\begin_layout Itemize
+Si 
+\begin_inset Formula $\omega_{z}>\omega_{p}$
+\end_inset
+
+el filtro se llama notch pasabajos.
+\end_layout
+
+\begin_layout Itemize
+Si 
+\begin_inset Formula $\omega_{z}<\omega_{p}$
+\end_inset
+
+el filtro se llama notch pasaltos.
+\end_layout
+
+\begin_layout Standard
 En este trabajo se analizarán y confeccionarán dos filtros específicos,
  uno de tipo notch y uno de tipo pasa-bajos.
 \end_layout
