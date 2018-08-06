@@ -1,0 +1,690 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\usepackage{makecell}		%Para emprolijar celdas de tablas
+\usepackage{amsmath}
+\usepackage{upgreek}		%puedo usar \uptau que es como \tau pero con mas rulito
+\usepackage{steinmetz}
+\usepackage{mathtools}
+\usepackage{placeins}
+\usepackage[textwidth=14cm]{geometry}	%texto ocupa mas ancho de pagina
+\usepackage{xcolor}		%se usa en \code
+
+
+\usepackage[parfill]{parskip}		%pone espacio entre parrafos
+\setlength{\parindent}{0pt}		%cuanta sangria al principio de un parrafo
+\usepackage{indentfirst}		%pone sangria al primer parrafo de una seccion
+
+
+% Swap the definition of \abs* and \norm*, so that \abs
+% and \norm resizes the size of the brackets, and the 
+% starred version does not.
+\DeclarePairedDelimiter\abs{\lvert}{\rvert} %
+\makeatletter	%magia de categoria de caracteres en Tex, ignorar
+\let\oldabs\abs
+\def\abs{\@ifstar{\oldabs}{\oldabs*}}
+\let\oldnorm\norm
+\def\norm{\@ifstar{\oldnorm}{\oldnorm*}}
+\makeatother	%magia de categoria de caracteres en Tex, ignorar
+
+%Definicion comando \parsum: hace re piola el simbolo de la suma en paralelo
+\newcommand{\parsum}{\mathbin{\!/\mkern-5mu/\!}} 
+
+%Definicion comando \code: poen el texto en fuente monoespaciada con fondo gris 
+%al estilo del codigo de stack overflow
+\definecolor{light-gray}{gray}{0.95} 
+\newcommand{\code}[1]{\colorbox{light-gray}{\texttt{#1}}}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section
+Introducción
+\end_layout
+
+\begin_layout Standard
+Los filtros electrónicos son circuitos empleados para lograr eliminar informació
+n que es considerada irrelevante o para eliminar error proveniente de ruido
+ no deseado sobre algún sistema en cuestión.
+\end_layout
+
+\begin_layout Standard
+Los filtros pasivos son circuitos compuestos en su totalidad por componentes
+ pasivos como resistencias, capacitores y bobinas.
+\end_layout
+
+\begin_layout Standard
+Se puede categorizar a un filtro según la respuesta en frecuencia que se
+ obtiene a partir del mismo.
+ Las 3 categorías básicas en las que se puede identificar a un filtro tienen
+ como parámetro fundamental una frecuencia específica denominada frecuencia
+ de corte, a partir de la cual se considera que el filtro actuará de la
+ manera deseada.
+\end_layout
+
+\begin_layout Standard
+A continuación se presentan los tipos de filtro:
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{1mm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+a) Filtro pasa-bajos: Elimina o atenúa notablemente las frecuencias 
+\begin_inset Quotes eld
+\end_inset
+
+altas
+\begin_inset Quotes erd
+\end_inset
+
+, es decir, aquellas que superan la frecuencia de corte.
+\end_layout
+
+\begin_layout Standard
+b) Filtro pasa-altos: Elimina o atenúa notablemente las frecuencias 
+\begin_inset Quotes eld
+\end_inset
+
+bajas
+\begin_inset Quotes erd
+\end_inset
+
+, es decir, aquellas que están por debajo de la frecuencia de corte.
+\end_layout
+
+\begin_layout Standard
+c) Filtro rechaza banda o filtro notch: Elimina o atenúa una banda de frecuencia
+s específica, centrada en la frecuencia de corte.
+ 
+\end_layout
+
+\begin_layout Standard
+En este trabajo se analizarán y confeccionarán dos filtros específicos,
+ uno de tipo notch y uno de tipo pasa-bajos.
+\end_layout
+
+\begin_layout Standard
+Al tener que confeccionar las placas para los filtros, nos encontramos con
+ que hay valores fijos para los capacitores y las resistencias que están
+ a la venta.
+ Esto en general no permite obtener un componente con una capacitancia o
+ resistencia exactamente igual al valor requerido teóricamente al realizar
+ el análisis del circuito y encontrar los requisitos para la frecuencia
+ de corte especificada.
+ Como solución a este problema, se propone la realización de un programa
+ que encuentre aquellos dos valores de resistencia y capacitancia comerciales
+ que combinados en serie o en paralelo equivaldrían a la resistencia o capacitan
+cia requerida.
+ El código de este programa se realizó en matlab.
+ 
+\end_layout
+
+\begin_layout Section
+Experiencia Práctica
+\end_layout
+
+\begin_layout Subsection
+Filtro notch pasivo (R)
+\end_layout
+
+\begin_layout Standard
+Se busca diseñar un filtro notch de frecuencia de corte 2.7·4 kHz = 10.8 kHz
+ a partir de un circuito dado: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Filtro del tp.png
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para ello, primero se busca obtener la función transferencia para el circuito
+ con los valores expresados genéricamente.
+ Se plantean las corrientes de la siguiente manera:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Filtro del tp con corrientes.png
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Se obtiene el siguiente sistema de ecuaciones:
+\end_layout
+
+\begin_layout Standard
+1)
+\begin_inset Formula $-I6+I3-I2$
+\end_inset
+
+ = 0
+\end_layout
+
+\begin_layout Standard
+2) 
+\begin_inset Formula $I1+I2-I5=0$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+3) 
+\begin_inset Formula $Vi-I1\cdot R1-\frac{I5}{S\cdot C3}=0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+4) 
+\begin_inset Formula $Vi-\frac{I3}{S\cdot C1}-I6\cdot R3=0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+5)
+\begin_inset Formula $Vo-i2\cdot R2-\frac{I5}{S\cdot C3}=0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+6) 
+\begin_inset Formula $Vo+\frac{I2}{S\cdot C2}-I6\cdot R3=0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Se corre el siguiente código de matlab para hallar la transferencia del
+ sistema: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+syms vi vo i1 i2 i3 i4 i5 i6 r1 r2 r3 c1 c2 c3 s
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+%seteo el sistema de ecuaciones del circuito 
+\end_layout
+
+\begin_layout Plain Layout
+
+eqn1 = -i6+ i3 -i2;
+\end_layout
+
+\begin_layout Plain Layout
+
+eqn2 = i1 + i2 -i5; eqn3 = vi - i1*r1 -i5/s/c3;
+\end_layout
+
+\begin_layout Plain Layout
+
+eqn4 = vi - i3/s/c1 - i6 * r3; eqn5 = vo - i2*r2 - i5/s/c3; 
+\end_layout
+
+\begin_layout Plain Layout
+
+eqn6 = vo +i2/s/c2 -i6*r3;
+\end_layout
+
+\begin_layout Plain Layout
+
+eqns = [eqn1 eqn2 eqn3 eqn4 eqn5 eqn6];
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+%resuelvo el sistema de ecuaciones, despejando la transferencia 
+\end_layout
+
+\begin_layout Plain Layout
+
+eqns = subs(eqns,i6,solve(eqns(1)==0, i6)); 
+\end_layout
+
+\begin_layout Plain Layout
+
+eqns = subs(eqns,i5,solve(eqns(2)==0, i5));
+\end_layout
+
+\begin_layout Plain Layout
+
+eqns(4) = subs(eqns(4),vi,solve(eqns(3)==0, vi)); 
+\end_layout
+
+\begin_layout Plain Layout
+
+eqns = subs(eqns,i1,solve(eqns(4)==0, i1)); 
+\end_layout
+
+\begin_layout Plain Layout
+
+eqns(6) = subs(eqns(6),vo,solve(eqns(5)==0, vo)); 
+\end_layout
+
+\begin_layout Plain Layout
+
+eqns = subs(eqns,i2,solve(eqns(6)==0,i2));
+\end_layout
+
+\begin_layout Plain Layout
+
+transfer = solve(eqns(5)==0, vo)/solve(eqns(3)==0,vi);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+transfer = simplify(transfer)		
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+H(s)=
+\backslash
+[
+\backslash
+frac{C_{1}
+\backslash
+, C_{2}
+\backslash
+, C_{3}
+\backslash
+, R_{1}
+\backslash
+, R_{2}
+\backslash
+, R_{3}
+\backslash
+, s^3 + 
+\backslash
+left(C_{1}
+\backslash
+, C_{2}
+\backslash
+, R_{1}
+\backslash
+, R_{3} + C_{1}
+\backslash
+, C_{2}
+\backslash
+, R_{2}
+\backslash
+, R_{3}
+\backslash
+right)
+\backslash
+, s^2 + 
+\backslash
+left(C_{1}
+\backslash
+, R_{3} + C_{2}
+\backslash
+, R_{3}
+\backslash
+right)
+\backslash
+, s + 1}{C_{1}
+\backslash
+, C_{2}
+\backslash
+, C_{3}
+\backslash
+, R_{1}
+\backslash
+, R_{2}
+\backslash
+, R_{3}
+\backslash
+, s^3 + 
+\backslash
+left(C_{1}
+\backslash
+, C_{2}
+\backslash
+, R_{1}
+\backslash
+, R_{3} + C_{1}
+\backslash
+, C_{2}
+\backslash
+, R_{2}
+\backslash
+, R_{3} + C_{1}
+\backslash
+, C_{3}
+\backslash
+, R_{1}
+\backslash
+, R_{3} + C_{2}
+\backslash
+, C_{3}
+\backslash
+, R_{1}
+\backslash
+, R_{2} + C_{2}
+\backslash
+, C_{3}
+\backslash
+, R_{1}
+\backslash
+, R_{3}
+\backslash
+right)
+\backslash
+, s^2 + 
+\backslash
+left(C_{2}
+\backslash
+, R_{1} + C_{1}
+\backslash
+, R_{3} + C_{2}
+\backslash
+, R_{2} + C_{3}
+\backslash
+, R_{1} + C_{2}
+\backslash
+, R_{3}
+\backslash
+right)
+\backslash
+, s + 1} 
+\backslash
+]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Dado que el filtro buscado es de tipo notch, sabiendo que su función de
+ transferencia característica cumple con la forma 
+\end_layout
+
+\begin_layout Standard
+Se observa de aquí que en el caso en que se toma 
+\begin_inset Formula $R1=R2=2\cdot R3$
+\end_inset
+
+ y 
+\begin_inset Formula $C1=C2=\frac{C3}{2}$
+\end_inset
+
+, la función transferencia resultante queda reducida a :
+\end_layout
+
+\begin_layout LyX-Code
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+H(s)=
+\backslash
+[
+\backslash
+frac{{
+\backslash
+mathrm{C_3}}^2
+\backslash
+, {
+\backslash
+mathrm{R_3}}^2
+\backslash
+, s^2 + 1}{{
+\backslash
+mathrm{C_3}}^2
+\backslash
+, {
+\backslash
+mathrm{R_3}}^2
+\backslash
+, s^2 + 4
+\backslash
+, 
+\backslash
+mathrm{C_3}
+\backslash
+, 
+\backslash
+mathrm{R_3}
+\backslash
+, s + 1}
+\backslash
+]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+que, al acomodarla de la siguiente manera:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+H(s)=
+\backslash
+[
+\backslash
+frac{s^2 + 
+\backslash
+frac{1}{{C_{3}}^2
+\backslash
+, {R_{3}}^2
+\backslash
+, s^2}}{s^2 + 
+\backslash
+frac{4
+\backslash
+, s}{C_{3}
+\backslash
+, R_{3}} + 
+\backslash
+frac{1}{{C_{3}}^2
+\backslash
+, {R_{3}}^2}}
+\backslash
+]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+resulta ser la transferencia de un filtro notch de tipo estándar, con frecuencia
+ de corte 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+f=$
+\backslash
+frac{1}{{2}
+\backslash
+,{
+\backslash
+pi}
+\backslash
+,{C_{3}}
+\backslash
+, {R_{3}}}$
+\end_layout
+
+\end_inset
+
+ y 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$
+\backslash
+mathrm{
+\backslash
+omega_s}$
+\end_layout
+
+\end_inset
+
+=
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$
+\backslash
+frac{1}{{C_{3}}
+\backslash
+, {R_{3}}}$
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
