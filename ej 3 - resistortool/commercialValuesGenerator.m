@@ -3,6 +3,7 @@ function [ commercialValues ] = commercialValuesGenerator( tolerancia)
 % 1,2,5,10 y 20
 tabalaValoresComerciales=csvread('valoresComerciales.txt');
 sizeTabla=size(tabalaValoresComerciales);
+commercialValues=0;
 data=0;
 if nargin==0
     tolerancia=10;
@@ -12,8 +13,12 @@ for i=1:sizeTabla(1)
         data=i;
     end
 end
-commercialValues=tabalaValoresComerciales(data,:);
-commercialValues=commercialValues(3:(commercialValues(2)+2));
+if(data~=0)
+    commercialValues=tabalaValoresComerciales(data,:);
+    commercialValues=commercialValues(3:(commercialValues(2)+2));
+end
+
+
  
 end
 
