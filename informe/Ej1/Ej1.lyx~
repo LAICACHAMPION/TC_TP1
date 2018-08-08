@@ -121,7 +121,7 @@ Se busca diseñar un filtro notch de frecuencia de corte 2.7·4 kHz = 10.8 kHz
 
 \begin_layout Standard
 \begin_inset Graphics
-	filename Filtro del tp.png
+	filename fotos/Filtro del tp.png
 	scale 60
 
 \end_inset
@@ -137,7 +137,7 @@ Para ello, primero se busca obtener la función transferencia para el circuito
 
 \begin_layout Standard
 \begin_inset Graphics
-	filename Filtro del tp con corrientes.png
+	filename fotos/Filtro del tp con corrientes.png
 	scale 60
 
 \end_inset
@@ -237,7 +237,12 @@ eqn2 = i1 + i2 -i5; eqn3 = vi - i1*r1 -i5/s/c3;
 
 \begin_layout Plain Layout
 
-eqn4 = vi - i3/s/c1 - i6 * r3; eqn5 = vo - i2*r2 - i5/s/c3; 
+eqn4 = vi - i3/s/c1 - i6 * r3; 
+\end_layout
+
+\begin_layout Plain Layout
+
+eqn5 = vo - i2*r2 - i5/s/c3; 
 \end_layout
 
 \begin_layout Plain Layout
@@ -439,10 +444,10 @@ right)
 \begin_layout Standard
 Dado que el filtro buscado es de tipo notch, sabiendo que su función de
  transferencia característica cumple con la forma 
-\end_layout
+\begin_inset Formula $\frac{s^{2}+\omega_{z}^{2}}{s^{2}+\frac{\omega_{p}}{Q}s+\omega_{p}^{2}}$
+\end_inset
 
-\begin_layout Standard
-Se observa de aquí que en el caso en que se toma 
+, se observa de aquí que en el caso en que se toma 
 \begin_inset Formula $R1=R2=2\cdot R3$
 \end_inset
 
@@ -590,7 +595,95 @@ frac{1}{{C_{3}}
 
 \end_inset
 
+.
+\end_layout
 
+\begin_layout Standard
+El bode resultante de esta función de transferencia es: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Bode Notch.png
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Bode teórico de la función de transferencia teórica del circuito diseñado
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+que resulta ser un notch en la frecuencia de corte que requeríamos.
+\end_layout
+
+\begin_layout Standard
+Lógicamente, de esta forma se deduce que el circuito resultante es de orden
+ 2, pero hubiera quedado de orden 3 en caso de que no se hubieran aplicado
+ las condiciones para las capacitancias 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+C1 y C2
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ y resistencias 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+R1 y R2.
 \end_layout
 
 \begin_layout Standard
@@ -622,11 +715,270 @@ por la condición dicha anteriormente.
 Con estos valores fijados, podemos realizar un análisis de la respuesta
  en frecuencia y la respuesta al impulso y al escalón en tiempo mediante
  antitransformadas de laplace.
- Efectivamente, dada la relacion
+ Efectivamente, si y(t) es la salida Vo y x(t) es la entrada Vi en función
+ del tiempo, con sus respectivas transformadas de Laplace Y(s) y X(s), entonces
+ dada la relación
 \begin_inset Formula $Y(s)=X(s)\cdot H(s)$
 \end_inset
 
-donde X(s) =1 o X(s) = 1/s respectivamente, por lo que y(t) =
+,donde X(s) =1 con x(t) =
+\begin_inset Formula $\delta(t)$
+\end_inset
+
+ para la respuesta impulsiva o X(s) = 1/s con x(t)=
+\begin_inset Formula $u(t)$
+\end_inset
+
+ para la respuesta al escalón, se puede obtener y(t) como y(t)=
+\begin_inset Formula $\mathcal{L}^{-1}\{H(s)\cdot X(s)\}(t)$
+\end_inset
+
+.
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Las antitransformadas de laplace fueron calculadas mediante llamados apropiados
+ a la función de matlab ilaplace, con la función compleja a antitransformar
+ como parámetro.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La respuesta impulsiva queda determinada entonces como 
+\begin_inset Formula $y_{imp}(t)\text{=}\mathcal{L}^{-1}\{\frac{C_{3}^{2}\mathrm{R_{3}}^{2}s^{2}+1}{C_{3}^{2}R_{3}^{2}s^{2}+4\mathrm{C_{3}}R_{3}s+1}\}(t)$
+\end_inset
+
+.
+ De esta forma:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+[y_{imp}(t) = 
+\backslash
+delta
+\backslash
+!
+\backslash
+left(t
+\backslash
+right) - 
+\backslash
+frac{4
+\backslash
+, 
+\backslash
+mathrm{e}^{-
+\backslash
+frac{2
+\backslash
+, t}{c_{3}
+\backslash
+, r_{3}}}
+\backslash
+, 
+\backslash
+left(
+\backslash
+cosh
+\backslash
+!
+\backslash
+left(
+\backslash
+frac{
+\backslash
+sqrt{3}
+\backslash
+, t}{c_{3}
+\backslash
+, r_{3}}
+\backslash
+right) - 
+\backslash
+frac{2
+\backslash
+, 
+\backslash
+sqrt{3}
+\backslash
+, 
+\backslash
+sinh
+\backslash
+!
+\backslash
+left(
+\backslash
+frac{
+\backslash
+sqrt{3}
+\backslash
+, t}{c_{3}
+\backslash
+, r_{3}}
+\backslash
+right)}{3}
+\backslash
+right)}{c_{3}
+\backslash
+, r_{3}} 
+\backslash
+]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename fotos/Respuesta al impulso.png
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Respuesta al impulso teórica
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Análogamente, la respuesta al escalón será 
+\begin_inset Formula $y_{esc}\text{=}\{\frac{C_{3}^{2}\mathrm{R_{3}}^{2}s^{2}+1}{C_{3}^{2}R_{3}^{2}s^{3}+4\mathrm{C_{3}}R_{3}s^{2}+s}\}(t)$
+\end_inset
+
+ y por lo tanto:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+[y_{esc}(t) = 1 - 
+\backslash
+frac{4
+\backslash
+, 
+\backslash
+sqrt{3}
+\backslash
+, 
+\backslash
+sinh
+\backslash
+!
+\backslash
+left(
+\backslash
+frac{
+\backslash
+sqrt{3}
+\backslash
+, t}{c_{3}
+\backslash
+, r_{3}}
+\backslash
+right)
+\backslash
+, 
+\backslash
+mathrm{e}^{-
+\backslash
+frac{2
+\backslash
+, t}{c_{3}
+\backslash
+, r_{3}}}}{3}
+\backslash
+]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename fotos/Respuesta al escalon.png
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Respuesta al escalón teórica
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -667,6 +1019,112 @@ con dos capacitores cada uno del valor de
 
  también en serie para lograr las relaciones mencionadas en la subsección
  anterior.
+\end_layout
+
+\begin_layout Subsection
+Mediciones experimentales
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename fotos/Frecuencia de Corte.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Salida y entrada en frecuencia de corte f = 10.8 kHz experimental
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Salida y entrada 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename fotos/Respuesta al escalon exp.png
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Respuesta al escalón experimental
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_body
