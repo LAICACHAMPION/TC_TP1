@@ -199,7 +199,11 @@ Se obtiene el siguiente sistema de ecuaciones:
 
 \begin_layout Standard
 Se corre el siguiente código de matlab para hallar la transferencia del
- sistema: 
+ siste
+\begin_inset Formula $ $
+\end_inset
+
+ma: 
 \end_layout
 
 \begin_layout Standard
@@ -314,11 +318,124 @@ transfer = simplify(transfer)
 \end_layout
 
 \begin_layout Standard
-transfer será por lo tanto la transferencia, que queda:
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+H(s)=
+\backslash
+[
+\backslash
+frac{C_{1}
+\backslash
+, C_{2}
+\backslash
+, C_{3}
+\backslash
+, R_{1}
+\backslash
+, R_{2}
+\backslash
+, R_{3}
+\backslash
+, s^3 + 
+\backslash
+left(C_{1}
+\backslash
+, C_{2}
+\backslash
+, R_{1}
+\backslash
+, R_{3} + C_{1}
+\backslash
+, C_{2}
+\backslash
+, R_{2}
+\backslash
+, R_{3}
+\backslash
+right)
+\backslash
+, s^2 + 
+\backslash
+left(C_{1}
+\backslash
+, R_{3} + C_{2}
+\backslash
+, R_{3}
+\backslash
+right)
+\backslash
+, s + 1}{C_{1}
+\backslash
+, C_{2}
+\backslash
+, C_{3}
+\backslash
+, R_{1}
+\backslash
+, R_{2}
+\backslash
+, R_{3}
+\backslash
+, s^3 + 
+\backslash
+left(C_{1}
+\backslash
+, C_{2}
+\backslash
+, R_{1}
+\backslash
+, R_{3} + C_{1}
+\backslash
+, C_{2}
+\backslash
+, R_{2}
+\backslash
+, R_{3} + C_{1}
+\backslash
+, C_{3}
+\backslash
+, R_{1}
+\backslash
+, R_{3} + C_{2}
+\backslash
+, C_{3}
+\backslash
+, R_{1}
+\backslash
+, R_{2} + C_{2}
+\backslash
+, C_{3}
+\backslash
+, R_{1}
+\backslash
+, R_{3}
+\backslash
+right)
+\backslash
+, s^2 + 
+\backslash
+left(C_{2}
+\backslash
+, R_{1} + C_{1}
+\backslash
+, R_{3} + C_{2}
+\backslash
+, R_{2} + C_{3}
+\backslash
+, R_{1} + C_{2}
+\backslash
+, R_{3}
+\backslash
+right)
+\backslash
+, s + 1} 
+\backslash
+]
 \end_layout
 
-\begin_layout Standard
-\begin_inset Formula $H(s)=\frac{C_{1}C_{2}C_{3}R_{1}R_{2}R_{3}s^{3}+\left(C_{1}C_{2}R_{1}R_{3}+C_{1}C_{2}R_{2}R_{3}\right)s^{2}+\left(C_{1}R_{3}+C_{2}R_{3}\right)s+1}{C_{1}C_{2}C_{3}R_{1}R_{2}R_{3}s^{3}+\left(C_{1}C_{2}R_{1}R_{3}+C_{1}C_{2}R_{2}R_{3}+C_{1}C_{3}R_{1}R_{3}+C_{2}C_{3}R_{1}R_{2}+C_{2}C_{3}R_{1}R_{3}\right)s^{2}+\left(C_{2}R_{1}+C_{1}R_{3}+C_{2}R_{2}+C_{3}R_{1}+C_{2}R_{3}\right)\,s+1}$
 \end_inset
 
 
@@ -492,7 +609,6 @@ El bode resultante de la función de transferencia resultante de la subsección
 
 \begin_layout Standard
 \begin_inset Float figure
-placement H
 wide false
 sideways false
 status open
@@ -500,7 +616,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename fotos/Bode Notch.png
+	filename Bode Notch.png
 	scale 40
 
 \end_inset
@@ -881,45 +997,6 @@ Dada la disponibilidad de componentes en el pañol y buscando minimizar la
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float figure
-placement H
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename fotos/foto diseño placa.png
-	scale 50
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Diseño de la placa
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 Donde tanto
 \begin_inset Formula $R_{1}$
 \end_inset
@@ -949,27 +1026,8 @@ con dos capacitores cada uno del valor de
  anterior.
 \end_layout
 
-\begin_layout Standard
-Se utilizó una placa multiperforada, sobre la cual se soldaron los componentes.
- 
-\end_layout
-
-\begin_layout Standard
-Los componentes utilizados fueron:
-\end_layout
-
 \begin_layout Subsection
 Mediciones experimentales
-\end_layout
-
-\begin_layout Standard
-Para todos los gráficos que se presenten a continuación, la entrada del
- estará representada con color amarillo y la salida con color verde.
- 
-\end_layout
-
-\begin_layout Paragraph
-Análisis de Bode:
 \end_layout
 
 \begin_layout Standard
@@ -1004,7 +1062,6 @@ Aquí es donde cabe destacar que el ruido de medición para la salida ya comienz
 
 \begin_layout Standard
 \begin_inset Float figure
-placement H
 wide false
 sideways false
 status open
@@ -1059,7 +1116,6 @@ Luego, se procedió a verificar que efectivamente se anulara la frecuencia
 
 \begin_layout Standard
 \begin_inset Float figure
-placement H
 wide false
 sideways false
 status open
@@ -1068,14 +1124,14 @@ status open
 \align left
 \begin_inset Graphics
 	filename fotos/Izquierda fc.png
-	scale 20
+	scale 30
 
 \end_inset
 
 
 \begin_inset Graphics
 	filename fotos/Derecha fc.png
-	scale 20
+	scale 30
 
 \end_inset
 
@@ -1116,13 +1172,11 @@ Luego, se procedió a realizar un análisis de bode del circuito.
 
 \begin_layout Standard
 \begin_inset Float figure
-placement H
 wide false
 sideways false
 status open
 
 \begin_layout Plain Layout
-\align center
 \begin_inset Graphics
 	filename fotos/bode_Exp.png
 	scale 30
@@ -1155,65 +1209,6 @@ Bode experimental
 
 \begin_layout Standard
 \begin_inset Float figure
-placement H
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename fotos/bode_Exp_ampliado.png
-	scale 30
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Bode experimental, frecuencia de corte coincidente
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Se observa que la frecuencia de corte experimental coincide con la solicitada,
- se observa también de los gráficos experimentales que el bode del circuito
- cumple con la forma propia de un notch estándar y verifica lo calculado
- teóricamente.
- 
-\end_layout
-
-\begin_layout Paragraph
-Respuesta al escalón:
-\end_layout
-
-\begin_layout Standard
-Se presenta el gráfico tomado con el osciloscopio de la entrada al escalón
- en amarillo y la salida al escalón en verde.
- Se hace notar que el gráfico de la salida se corresponde correctamente
- con la respuesta al escalón teórica.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement H
 wide false
 sideways false
 status open
@@ -1244,30 +1239,6 @@ Respuesta al escalón experimental
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-Como se puede verificar, la entrada no es un escalón perfecto y esto se
- debe a dos motivos:
-\end_layout
-
-\begin_layout Standard
-1) La principal razón por la que el escalón medido tiene un claro paso entre
- todos los estados intermedios entre el potencial cero y el valor fijado
- por el generador es que la resistencia interna del generador de 50
-\begin_inset Formula $\Omega$
-\end_inset
-
- no es despreciable frente a las resistencias elegidas para la confección
- del circuito.
- Esto podría haber sido un fallo en el diseño y va a ser tenido en cuenta
- en trabajos posteriores.
- 
-\end_layout
-
-\begin_layout Standard
-2) Otro factor a tener en cuenta es el pasabajos interno del osciloscopio
- a la hora de medir, que modifica tanto en fase como en amplitud a la entrada.
 \end_layout
 
 \end_body

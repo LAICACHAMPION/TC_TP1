@@ -199,11 +199,7 @@ Se obtiene el siguiente sistema de ecuaciones:
 
 \begin_layout Standard
 Se corre el siguiente código de matlab para hallar la transferencia del
- siste
-\begin_inset Formula $ $
-\end_inset
-
-ma: 
+ sistema: 
 \end_layout
 
 \begin_layout Standard
@@ -318,124 +314,11 @@ transfer = simplify(transfer)
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-H(s)=
-\backslash
-[
-\backslash
-frac{C_{1}
-\backslash
-, C_{2}
-\backslash
-, C_{3}
-\backslash
-, R_{1}
-\backslash
-, R_{2}
-\backslash
-, R_{3}
-\backslash
-, s^3 + 
-\backslash
-left(C_{1}
-\backslash
-, C_{2}
-\backslash
-, R_{1}
-\backslash
-, R_{3} + C_{1}
-\backslash
-, C_{2}
-\backslash
-, R_{2}
-\backslash
-, R_{3}
-\backslash
-right)
-\backslash
-, s^2 + 
-\backslash
-left(C_{1}
-\backslash
-, R_{3} + C_{2}
-\backslash
-, R_{3}
-\backslash
-right)
-\backslash
-, s + 1}{C_{1}
-\backslash
-, C_{2}
-\backslash
-, C_{3}
-\backslash
-, R_{1}
-\backslash
-, R_{2}
-\backslash
-, R_{3}
-\backslash
-, s^3 + 
-\backslash
-left(C_{1}
-\backslash
-, C_{2}
-\backslash
-, R_{1}
-\backslash
-, R_{3} + C_{1}
-\backslash
-, C_{2}
-\backslash
-, R_{2}
-\backslash
-, R_{3} + C_{1}
-\backslash
-, C_{3}
-\backslash
-, R_{1}
-\backslash
-, R_{3} + C_{2}
-\backslash
-, C_{3}
-\backslash
-, R_{1}
-\backslash
-, R_{2} + C_{2}
-\backslash
-, C_{3}
-\backslash
-, R_{1}
-\backslash
-, R_{3}
-\backslash
-right)
-\backslash
-, s^2 + 
-\backslash
-left(C_{2}
-\backslash
-, R_{1} + C_{1}
-\backslash
-, R_{3} + C_{2}
-\backslash
-, R_{2} + C_{3}
-\backslash
-, R_{1} + C_{2}
-\backslash
-, R_{3}
-\backslash
-right)
-\backslash
-, s + 1} 
-\backslash
-]
+transfer será por lo tanto la transferencia, que queda:
 \end_layout
 
+\begin_layout Standard
+\begin_inset Formula $H(s)=\frac{C_{1}C_{2}C_{3}R_{1}R_{2}R_{3}s^{3}+\left(C_{1}C_{2}R_{1}R_{3}+C_{1}C_{2}R_{2}R_{3}\right)s^{2}+\left(C_{1}R_{3}+C_{2}R_{3}\right)s+1}{C_{1}C_{2}C_{3}R_{1}R_{2}R_{3}s^{3}+\left(C_{1}C_{2}R_{1}R_{3}+C_{1}C_{2}R_{2}R_{3}+C_{1}C_{3}R_{1}R_{3}+C_{2}C_{3}R_{1}R_{2}+C_{2}C_{3}R_{1}R_{3}\right)s^{2}+\left(C_{2}R_{1}+C_{1}R_{3}+C_{2}R_{2}+C_{3}R_{1}+C_{2}R_{3}\right)\,s+1}$
 \end_inset
 
 
@@ -598,12 +481,18 @@ frac{1}{{C_{3}}
 .
 \end_layout
 
+\begin_layout Subsection
+Análisis teórico
+\end_layout
+
 \begin_layout Standard
-El bode resultante de esta función de transferencia es: 
+El bode resultante de la función de transferencia resultante de la subsección
+ anterior es: 
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status open
@@ -992,6 +881,45 @@ Dada la disponibilidad de componentes en el pañol y buscando minimizar la
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename fotos/foto diseño placa.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diseño de la placa
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 Donde tanto
 \begin_inset Formula $R_{1}$
 \end_inset
@@ -1021,12 +949,62 @@ con dos capacitores cada uno del valor de
  anterior.
 \end_layout
 
+\begin_layout Standard
+Se utilizó una placa multiperforada, sobre la cual se soldaron los componentes.
+ 
+\end_layout
+
+\begin_layout Standard
+Los componentes utilizados fueron:
+\end_layout
+
 \begin_layout Subsection
 Mediciones experimentales
 \end_layout
 
 \begin_layout Standard
+Para todos los gráficos que se presenten a continuación, la entrada del
+ estará representada con color amarillo y la salida con color verde.
+ 
+\end_layout
+
+\begin_layout Paragraph
+Análisis de Bode:
+\end_layout
+
+\begin_layout Standard
+Lo primero que se dedició probar fue si el circuito efectivamente anulaba(atenua
+ba hasta casi anular) la frecuencia solicitada.
+ Para eso se eligió una entrada senoidal (una única frecuencia) de 10.8 kHz.
+ Se observó que la salida era casi nula, detectándose una amplitud de 310
+ mV pico a pico contra una entrada de 8.75 V pico a pico, lo cual se traduce
+ a una relación entrada salida de 
+\begin_inset Formula $\frac{V_{out}}{V_{in}}\text{=0.0354}$
+\end_inset
+
+, por lo que la salida representaría el 3% de la entrada, un valor muy cercano
+ al 0% que se esperaba lograr.
+ 
+\end_layout
+
+\begin_layout Standard
+Aquí es donde cabe destacar que el ruido de medición para la salida ya comienza
+ a ser significativo, pudiendo alterar el valor de la amplitud, aumentándola.
+ El gráfico en este caso resulta mucho más representativo de la señal de
+ salida, ya que en los promedios que se tomaron para la salida para proyectar
+ la imagen (que terminan cancelando el ruido) se nota claramente cómo la
+ señal queda prácticamente anulada, con una amplitud muchísimo menor a los
+ 310 mV que muestra numéricamente el osciloscopio .
+ Es por esto que debería considerarse también una 
+\begin_inset Formula $\frac{V_{out}}{V_{in}}\text{<<0.0354}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status open
@@ -1034,7 +1012,8 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename fotos/Frecuencia de Corte.png
+	filename fotos/Frecuencia de corte exp.png
+	scale 30
 
 \end_inset
 
@@ -1063,12 +1042,43 @@ Salida y entrada en frecuencia de corte f = 10.8 kHz experimental
 \end_layout
 
 \begin_layout Standard
+Luego, se procedió a verificar que efectivamente se anulara la frecuencia
+ de corte pero sus alrededores no estuvieran tan atenuados como esa frecuencia
+ en particular.
+ Las mediciones del osciloscopio para frecuencias de 0.2 kHz de diferencia
+ con la frecuencia de corte muestran un Vin de aproximadamente 8.6 V mientras
+ que la salida fue de aproximadamente 50mV.
+ Dado la forma del gráfico, se puede apreciar como el ruido ya no entra
+ en juego al afectar a las mediciones debido al tamaño de la onda de salida
+ y es por eso que si bien el valor obtenido del osciloscopio es mucho menor
+ y daría una relación entrada salida de un orden de magnitud de diferencia,
+ en el gráfico se muestra cómo la amplitud de las sinusoidales de salida
+ son notablemente superiores a las de la frecuencia de corte.
+ De esta manera se deduce que el filtro notch funciona correctamente.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status open
 
 \begin_layout Plain Layout
+\align left
+\begin_inset Graphics
+	filename fotos/Izquierda fc.png
+	scale 20
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename fotos/Derecha fc.png
+	scale 20
+
+\end_inset
+
 
 \end_layout
 
@@ -1076,7 +1086,57 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Salida y entrada 
+Salida y entrada en alrededores de la frecuencia de corte experimentalmente
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Luego, se procedió a realizar un análisis de bode del circuito.
+ Para eso se analizó la respuesta a sinusoidales de distintas frecuencias,
+ cambiando manualmente desde el generador la frecuencia de estas a una amplitud
+ fija y registrando la amplitud de la sinusoidal de salida.
+ La tabla de valores tomados se muestran en el anexo.
+ De estos datos se desprende el siguiente gráfico aproximado del bode del
+ circuito, que luego se contrasta con el teórico.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename fotos/bode_Exp.png
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Bode experimental
 \end_layout
 
 \end_inset
@@ -1095,6 +1155,65 @@ Salida y entrada
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename fotos/bode_Exp_ampliado.png
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Bode experimental, frecuencia de corte coincidente
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Se observa que la frecuencia de corte experimental coincide con la solicitada,
+ se observa también de los gráficos experimentales que el bode del circuito
+ cumple con la forma propia de un notch estándar y verifica lo calculado
+ teóricamente.
+ 
+\end_layout
+
+\begin_layout Paragraph
+Respuesta al escalón:
+\end_layout
+
+\begin_layout Standard
+Se presenta el gráfico tomado con el osciloscopio de la entrada al escalón
+ en amarillo y la salida al escalón en verde.
+ Se hace notar que el gráfico de la salida se corresponde correctamente
+ con la respuesta al escalón teórica.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
 wide false
 sideways false
 status open
@@ -1125,6 +1244,30 @@ Respuesta al escalón experimental
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Como se puede verificar, la entrada no es un escalón perfecto y esto se
+ debe a dos motivos:
+\end_layout
+
+\begin_layout Standard
+1) La principal razón por la que el escalón medido tiene un claro paso entre
+ todos los estados intermedios entre el potencial cero y el valor fijado
+ por el generador es que la resistencia interna del generador de 50
+\begin_inset Formula $\Omega$
+\end_inset
+
+ no es despreciable frente a las resistencias elegidas para la confección
+ del circuito.
+ Esto podría haber sido un fallo en el diseño y va a ser tenido en cuenta
+ en trabajos posteriores.
+ 
+\end_layout
+
+\begin_layout Standard
+2) Otro factor a tener en cuenta es el pasabajos interno del osciloscopio
+ a la hora de medir, que modifica tanto en fase como en amplitud a la entrada.
 \end_layout
 
 \end_body
