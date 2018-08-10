@@ -55,7 +55,8 @@ if PorS == 0 %si no, devuelvo lo que tenga menos error
 end
 
 %verifico si r es un valor comercial por si hubo un error de redondeo
-if ~isempty(find(values == r/10^magorder(r), 1)) == true && r1 ~= r  
+if ~isempty(find(values == r/10^magorder(r), 1)) == true && r1 ~= r ...
+    && r<=maxr && r>=minr
     r1 = r; error = 0;
     if PorS == 'p'
         r2 = +inf;

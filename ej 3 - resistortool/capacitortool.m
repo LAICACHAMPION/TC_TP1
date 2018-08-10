@@ -56,7 +56,8 @@ end
 
 %por si hubo un error de redondeo, verifico si me pasaron un valor
 %comercial
-if ~isempty(find(values == c/10^magorder(c), 1)) == true && c1 ~= c  
+if ~isempty(find(values == c/10^magorder(c), 1)) == true && c1 ~= c  ...
+    && c<=maxc && c>=minc
     c1 = c; error = 0;
     if PorS == 'p'
         c2 = +inf;
