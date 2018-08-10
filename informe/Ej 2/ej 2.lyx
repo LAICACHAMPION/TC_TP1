@@ -466,7 +466,11 @@ status open
 
 \begin_layout Plain Layout
 
+<<<<<<< HEAD
 $10V_{pp}$
+=======
+$10V_pp$
+>>>>>>> 72b1508e46952df716f12acf972193b36000a0de
 \end_layout
 
 \end_inset
