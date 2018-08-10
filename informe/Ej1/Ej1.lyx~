@@ -347,9 +347,9 @@ status open
 
 \begin_layout Plain Layout
 
-H(s)=
+
 \backslash
-[
+[H(s)=
 \backslash
 frac{{
 \backslash
@@ -397,9 +397,9 @@ status open
 
 \begin_layout Plain Layout
 
-H(s)=
+
 \backslash
-[
+[H(s)=
 \backslash
 frac{s^2 + 
 \backslash
@@ -486,8 +486,7 @@ Análisis teórico
 \end_layout
 
 \begin_layout Standard
-El bode resultante de la función de transferencia resultante de la subsección
- anterior es: 
+El bode resultante de la función de transferencia del circuito es: 
 \end_layout
 
 \begin_layout Standard
@@ -500,7 +499,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename Bode Notch.png
+	filename fotos/Bode Notch.png
 	scale 40
 
 \end_inset
@@ -530,7 +529,7 @@ Bode teórico de la función de transferencia teórica del circuito diseñado
 \end_layout
 
 \begin_layout Standard
-que resulta ser un notch en la frecuencia de corte que requeríamos.
+que resulta ser un notch con la frecuencia de corte que requeríamos.
 \end_layout
 
 \begin_layout Standard
