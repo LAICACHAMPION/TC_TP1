@@ -59,10 +59,10 @@ for exp1 = magr-1:magr
                 end
             else
                 abserror = abs((r-R1)/r);
-                    if (abserror < error)
-                        error = abserror;
-                        r1 = R1; r2 = 0;
-                    end
+                if (abserror < error)
+                    error = abserror;
+                    r1 = R1; r2 = 0;
+                end
                 break; %una vez que me pase de r ya no sigo
             end
         end

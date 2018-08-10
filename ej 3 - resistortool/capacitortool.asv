@@ -33,7 +33,7 @@ values = commercialValuesGenerator(t);
 minc = 10^-6; maxc = 4700; % de 1pF a 4700uF
 
 PorS = 0;
-if nargin == 3 %si me pasan una topologia valida, uso esa
+if nargin == 3
     if topology == 'p'
         [c1, c2, error] = parallelresistortool(c, values, minc, maxc);
         PorS = 'p';
@@ -43,7 +43,7 @@ if nargin == 3 %si me pasan una topologia valida, uso esa
     end
 end
 
-if PorS == 0 %si no, uso la que menos error tenga
+if PorS == 0
     [sr1, sr2, serror] = seriesresistortool(c, values, minc, maxc);
     [pr1, pr2, perror] = parallelresistortool(c, values, minc, maxc);
     
@@ -54,8 +54,6 @@ if PorS == 0 %si no, uso la que menos error tenga
     end
 end
 
-%por si hubo un error de redondeo, verifico si me pasaron un valor
-%comercial
 if ~isempty(find(values == c/10^magorder(c), 1)) == true && c1 ~= c  
     c1 = c; error = 0;
     if PorS == 'p'
