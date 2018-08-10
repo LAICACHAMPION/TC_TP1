@@ -694,7 +694,66 @@ Aplicar una se˜nal de las mismas caracter´ısticas pero con frecuencia 160Hz
 placement H
 wide false
 sideways false
-status collapsed
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenes/simulacion transitorio filtro pasabajos rc 64K entrada 640k.PNG
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Espectro de 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+se
+\backslash
+~nal
+\end_layout
+
+\end_inset
+
+ de entrada (cuadrada 32KHz, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$10V_{pp}$
+\end_layout
+
+\end_inset
+
+ sin valor medio)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -758,7 +817,7 @@ status collapsed
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename imagenes/simulacion transitorio filtro pasabajos rc 64K entrada 640k zoom.PNG
+	filename imagenes/espectro senial cuadrada 32K.PNG
 
 \end_inset
 
@@ -803,11 +862,6 @@ $10V_{pp}$
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
-\align center
 
 \end_layout
 
