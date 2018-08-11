@@ -110,5 +110,180 @@
 Resistor tool
 \end_layout
 
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Este programa tiene como objetivo obtener la mejor aproximaci
+\backslash
+'on posible a un valor de resistencia dado, mediante una combinaci
+\backslash
+'on serie o paralelo y teniendo en cuenta los valores comerciales existentes
+ para cada tolerancia.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename resistortool.png
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+interfaz y descripci
+\backslash
+'on de 
+\backslash
+textit{resistortool} en Matlab
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Otros recaudos que se tomaron en la implementaci
+\backslash
+'on fueron no excederse de los valores m
+\backslash
+'aximos y m
+\backslash
+'inimos de los componentes que se encuentran en el pa
+\backslash
+~nol de electr
+\backslash
+'onica de la Universidad, a saber: $0.1
+\backslash
+Omega$ y $10M
+\backslash
+Omega$.
+\end_layout
+
+\begin_layout Plain Layout
+
+Para encontrar la mejor aproximaci
+\backslash
+'on al valor de $r$ en serie, se le asigna sucesivamente a $r1$ los valores
+ comerciales de la tolerancia que corresponda, en el mismo orden de magnitud
+ que $r$ y en un orden menos.
+ Esto se debe a que para obtener un n
+\backslash
+'umero de orden $N$ sumando dos n
+\backslash
+'umeros, al menos uno de ellos debe ser del mismo orden de magnitud o uno
+ menos que el de la suma que se desea obtener (por ejemplo: $99+99=198<1000$,
+ $95+6=101
+\backslash
+geq 100$).
+ Para cada valor de $r1$ que se prueba, $r2$ tomar
+\backslash
+'a valores en el orden de magnitud de $r-r1$.
+ Este proceso contin
+\backslash
+'ua hasta que $r1
+\backslash
+geq r$ (en cuyo caso $r2=0$) o $r1+r2>r$, y se van guardando los valores
+ que resultan en menor error relativo.
+\end_layout
+
+\begin_layout Plain Layout
+
+En la combinaci
+\backslash
+'on en paralelo, se pasan todos los par
+\backslash
+'ametros a admitancia, se busca la mejor combinaci
+\backslash
+'on en serie, y se vuelve a resistencia.
+\end_layout
+
+\begin_layout Plain Layout
+
+Debido a los errores de aproximaci
+\backslash
+'on que se producen al realizar las cuentas (sobre todo para el paralelo),
+ luego de obtener $r1$ y $r2$ mediante el algoritmo anterior, se verifica
+ que no se haya pasado por alto que $r$ ya era un valor comercial, en cuyo
+ caso se reemplaza $r1$ por $r$ y $r2$ por 0 o infinito seg
+\backslash
+'un la topolog
+\backslash
+'ia que se est
+\backslash
+'e usando.
+\end_layout
+
+\begin_layout Plain Layout
+
+Por 
+\backslash
+'ultimo, se aprovech
+\backslash
+'o el c
+\backslash
+'odigo que ya exist
+\backslash
+'ia hasta el momento para implementar un 
+\backslash
+textit{capacitortool}, que realiza el mismo proceso pero con otros valores
+ m
+\backslash
+'aximos y m
+\backslash
+'inimos ($1pF$ y $4700
+\backslash
+mu F$), e intercambiando serie con paralelo.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \end_body
 \end_document
