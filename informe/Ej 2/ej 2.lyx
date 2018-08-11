@@ -110,6 +110,11 @@
 Filtro pasabajos pasivo
 \end_layout
 
+\begin_layout Standard
+LLEGO A LA RESPUESTA EXPONENCIAL POR LA FUNCION DE TRANSFERENCIA APLICADA
+ A LAS FRECUENCIAS DE ENTRADA TENIENDO EN CUENTA Rint.
+\end_layout
+
 \begin_layout Subsection
 Analizar y explicar los resultados obtenidos.
 \end_layout
@@ -225,13 +230,13 @@ Respuesta del filtro RC a 32KHz
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
 	filename imagenes/medicion transitorio filtro pasabajos rc 64k entrada 32k.png
-	scale 40
+	scale 35
 
 \end_inset
 
@@ -253,6 +258,10 @@ Respuesta del filtro RC a 32KHz
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+DIBUJO BODE
 \end_layout
 
 \begin_layout Standard
@@ -419,6 +428,14 @@ tensi
 
 \end_layout
 
+\begin_layout Standard
+REEMPLAZO CON LA FORMULA DE V_C Y OBTENGO Vsal EN CARGA Y DESCARGA
+\end_layout
+
+\begin_layout Standard
+ALGO SOBRE 5TAU Y F0/2
+\end_layout
+
 \begin_layout Subsection
 Realizar un diagrama espectral te´orico de las componentes de la se˜nal
  de entrada y superponerlo con la respuesta en frecuencia del filtro.
@@ -431,12 +448,13 @@ Realizar un diagrama espectral te´orico de las componentes de la se˜nal
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
 	filename imagenes/espectro senial cuadrada 32K.PNG
+	scale 70
 
 \end_inset
 
@@ -466,11 +484,7 @@ status open
 
 \begin_layout Plain Layout
 
-<<<<<<< HEAD
 $10V_{pp}$
-=======
-$10V_pp$
->>>>>>> 72b1508e46952df716f12acf972193b36000a0de
 \end_layout
 
 \end_inset
@@ -486,6 +500,14 @@ $10V_pp$
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+//TODO: grafico bode
+\end_layout
+
+\begin_layout Standard
+DECIR ALGO SOBRE EL ESPECTRO DE LA CUADRADA ALGUN #DATAZO
 \end_layout
 
 \begin_layout Subsection
@@ -579,34 +601,17 @@ $X_n$
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $X_{n}=\frac{20V}{n\pi}$
+\begin_inset Formula 
+\begin{equation}
+X_{n}=\frac{20}{n\pi}V,\,\phase{X_{n}}=0^{\circ}\label{eq:parametros_cuadrada}
+\end{equation}
+
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $\phase{X_{n}}=0^{\circ}$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-Poner un label en la transferencia y referenciarlo aca
-\end_layout
-
-\end_inset
-
-
 \begin_inset ERT
 status open
 
@@ -648,9 +653,11 @@ abs{
 \backslash
 frac{1}{sCR+1}} =  
 \backslash
-frac{1}{(2
+frac{1}{
 \backslash
-pi fRC)^2+1}
+sqrt{(2
+\backslash
+pi fRC)^2+1}}
 \backslash
 ]
 \end_layout
@@ -661,7 +668,20 @@ pi fRC)^2+1}
 \end_layout
 
 \begin_layout Standard
-Combinado con el desarrollo en serie de Fourier de la ecuaci
+Combinado con el 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+m
+\backslash
+'odulo
+\end_layout
+
+\end_inset
+
+ y la fase de los arm
 \begin_inset ERT
 status open
 
@@ -669,22 +689,242 @@ status open
 
 
 \backslash
-'on ref{eq:DSF_cuadrada}
+'o
 \end_layout
 
 \end_inset
 
-, se obtiene 
+nicos de entrada, (ecuaci
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+'on 
+\backslash
+ref{eq:parametros_cuadrada}
+\end_layout
+
+\end_inset
+
+), se obtienen el 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+m
+\backslash
+'odulo
+\end_layout
+
+\end_inset
+
+ y la fase de las componentes 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$Y_n$
+\end_layout
+
+\end_inset
+
+ de la tensi
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+'o
+\end_layout
+
+\end_inset
+
+n de salida 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$V_C$
+\end_layout
+
+\end_inset
+
+:
 \end_layout
 
 \begin_layout Standard
-LLEGO A LA RESPUESTA EXPONENCIAL POR LA FUNCION DE TRANSFERENCIA APLICADA
- A LAS FRECUENCIAS DE ENTRADA
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+[ 
+\backslash
+phase{Y_n} = 
+\backslash
+phase{X_n} + 
+\backslash
+phase{H(s)} = -arctg(2
+\backslash
+pi RC), n>0 impar 
+\backslash
+]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+[ 
+\backslash
+abs{Y_n} = 
+\backslash
+abs{X_n} 
+\backslash
+cdot 
+\backslash
+abs{H(s)} = 
+\backslash
+frac{20V}{n 
+\backslash
+pi } 
+\backslash
+cdot 
+\backslash
+frac{1}{
+\backslash
+sqrt{(2
+\backslash
+pi fRC)^2+1}}, n>0 impar
+\backslash
+]
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-LLEGO A LA RESPUESTA EXPONENCIAL POR ECUACIONES DIFERENCIALES DE CARGA Y
- DESCARGA DE CAPACITOR
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Se puede comprobar gr
+\backslash
+'aficamente que la fase y el m
+\backslash
+'odulo de $X_n$ y de $Y_n$
+\end_layout
+
+\end_inset
+
+ son los correctos graficando 
+\begin_inset Formula $\sum\phase{X_{n\}}}\cdot X_{n}$
+\end_inset
+
+ y 
+\begin_inset Formula $\sum\phase{Y_{n\}}}\cdot Y_{n}$
+\end_inset
+
+.
+ Se muestra la suma de los armonicos antes y despues de ser modificados
+ por el filtro hasta el 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+t
+\backslash
+'ermino
+\end_layout
+
+\end_inset
+
+ 1000:  
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenes/serie cuadrada.PNG
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Serie de armonicos de entrada (1000 terminos)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenes/serie tension capacitor filtro.PNG
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Serie de armonicos de salida (1000 terminos)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -703,7 +943,8 @@ status collapsed
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename imagenes/simulacion transitorio filtro pasabajos rc 64K entrada 640k.PNG
+	filename imagenes/simulacion transitorio filtro pasabajos rc 64K entrada 640k zoom.PNG
+	scale 60
 
 \end_inset
 
@@ -762,7 +1003,8 @@ status collapsed
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename imagenes/simulacion transitorio filtro pasabajos rc 64K entrada 640k zoom.PNG
+	filename imagenes/medicion transitorio filtro pasabajos rc 64k entrada 640k.png
+	scale 40
 
 \end_inset
 
@@ -773,31 +1015,7 @@ status collapsed
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Espectro de 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-se
-\backslash
-~nal
-\end_layout
-
-\end_inset
-
- de entrada (cuadrada 32KHz, 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-$10V_{pp}$
-\end_layout
-
-\end_inset
-
- sin valor medio)
+Respuesta del filtro RC a 640KHz
 \end_layout
 
 \end_inset
@@ -811,12 +1029,130 @@ $10V_{pp}$
 \end_layout
 
 \begin_layout Standard
-\align center
+Como el 
+\begin_inset ERT
+status open
 
+\begin_layout Plain Layout
+
+per
+\backslash
+'iodo
+\end_layout
+
+\end_inset
+
+ es 10 veces menor que el tiempo 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+caracter
+\backslash
+'istico $
+\backslash
+uptau$
+\end_layout
+
+\end_inset
+
+, ni la 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+tensi
+\backslash
+'on
+\end_layout
+
+\end_inset
+
+ del capacitor ni la tension de salida del generador llegas a su valor en
+ permanente (+5V o -5V).
+ Tambien por el mismo motivo la tension del capacitor varia linealmente
+ con una pendiente 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$
+\backslash
+frac{V_max}{
+\backslash
+uptau}$
+\end_layout
+
+\end_inset
+
+.
+ (ver referencia al grafiquito que hizo rochi con tanto amor).
 \end_layout
 
 \begin_layout Subsection
 ¿Se puede utilizar el sistema como integrador? 
+\end_layout
+
+\begin_layout Standard
+Como la pendiente es 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$
+\backslash
+frac{V_max}{
+\backslash
+uptau}$
+\end_layout
+
+\end_inset
+
+, funciona como un integrador que ademas divide por tau.
+ Otra forma de ver que se comporta como un integrador es analizando su funcion
+ de transferencia.
+ Si 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$f 
+\backslash
+gg 
+\backslash
+frac{1}{RC} 
+\backslash
+Rightarrow 
+\backslash
+frac{2
+\backslash
+pi f}{RC} 
+\backslash
+gg 1 
+\backslash
+Rightarrow H(s) = 
+\backslash
+frac{1}{
+\backslash
+frac{s}{RC} +1} 
+\backslash
+approx 
+\backslash
+frac{1}{RC}
+\backslash
+cdot 
+\backslash
+frac{1}{s}$
+\end_layout
+
+\end_inset
+
+ 
 \end_layout
 
 \end_body
