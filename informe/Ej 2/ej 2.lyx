@@ -111,8 +111,42 @@ Filtro pasabajos pasivo
 \end_layout
 
 \begin_layout Standard
-LLEGO A LA RESPUESTA EXPONENCIAL POR LA FUNCION DE TRANSFERENCIA APLICADA
- A LAS FRECUENCIAS DE ENTRADA TENIENDO EN CUENTA Rint.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+[ V_g = V_R + V_C 
+\backslash
+]
+\end_layout
+
+\begin_layout Plain Layout
+
+Se puede modelar la tensi
+\backslash
+'on en el capacitor de un circuito RC en respuesta a la onda cuadrada sabiendo
+ la respuesta al escal
+\backslash
+'on:
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+[ V_C = V_g(1-e^{-
+\backslash
+frac{t}{RC}})
+\backslash
+].
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -230,7 +264,7 @@ Respuesta del filtro RC a 32KHz
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
