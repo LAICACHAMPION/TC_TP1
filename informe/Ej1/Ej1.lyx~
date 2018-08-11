@@ -151,7 +151,7 @@ Se obtiene el siguiente sistema de ecuaciones:
 
 \begin_layout Standard
 1)
-\begin_inset Formula $-I6+I3-I2$
+\begin_inset Formula $-I_{6}+I_{3}-I_{2}$
 \end_inset
 
  = 0
@@ -159,7 +159,7 @@ Se obtiene el siguiente sistema de ecuaciones:
 
 \begin_layout Standard
 2) 
-\begin_inset Formula $I1+I2-I5=0$
+\begin_inset Formula $I_{1}+I_{2}-I_{5}=0$
 \end_inset
 
  
@@ -167,7 +167,7 @@ Se obtiene el siguiente sistema de ecuaciones:
 
 \begin_layout Standard
 3) 
-\begin_inset Formula $Vi-I1\cdot R1-\frac{I5}{S\cdot C3}=0$
+\begin_inset Formula $Vi-I_{1}\cdot R_{1}-\frac{I_{5}}{S\cdot C_{3}}=0$
 \end_inset
 
 
@@ -175,23 +175,23 @@ Se obtiene el siguiente sistema de ecuaciones:
 
 \begin_layout Standard
 4) 
-\begin_inset Formula $Vi-\frac{I3}{S\cdot C1}-I6\cdot R3=0$
+\begin_inset Formula $Vi-\frac{I_{3}}{S\cdot C_{1}}-I_{6}\cdot R_{3}=0$
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
-5)
-\begin_inset Formula $Vo-i2\cdot R2-\frac{I5}{S\cdot C3}=0$
+5) 
+\begin_inset Formula $Vo-I_{2}\cdot R_{2}-\frac{I_{5}}{S\cdot C_{3}}=0$
 \end_inset
 
-
+ 
 \end_layout
 
 \begin_layout Standard
 6) 
-\begin_inset Formula $Vo+\frac{I2}{S\cdot C2}-I6\cdot R3=0$
+\begin_inset Formula $Vo+\frac{I_{2}}{S\cdot C_{2}}-I_{6}\cdot R_{3}=0$
 \end_inset
 
 
@@ -228,7 +228,12 @@ eqn1 = -i6+ i3 -i2;
 
 \begin_layout Plain Layout
 
-eqn2 = i1 + i2 -i5; eqn3 = vi - i1*r1 -i5/s/c3;
+eqn2 = i1 + i2 -i5; 
+\end_layout
+
+\begin_layout Plain Layout
+
+eqn3 = vi - i1*r1 -i5/s/c3;
 \end_layout
 
 \begin_layout Plain Layout
@@ -318,7 +323,7 @@ transfer será por lo tanto la transferencia, que queda:
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $H(s)=\frac{C_{1}C_{2}C_{3}R_{1}R_{2}R_{3}s^{3}+\left(C_{1}C_{2}R_{1}R_{3}+C_{1}C_{2}R_{2}R_{3}\right)s^{2}+\left(C_{1}R_{3}+C_{2}R_{3}\right)s+1}{C_{1}C_{2}C_{3}R_{1}R_{2}R_{3}s^{3}+\left(C_{1}C_{2}R_{1}R_{3}+C_{1}C_{2}R_{2}R_{3}+C_{1}C_{3}R_{1}R_{3}+C_{2}C_{3}R_{1}R_{2}+C_{2}C_{3}R_{1}R_{3}\right)s^{2}+\left(C_{2}R_{1}+C_{1}R_{3}+C_{2}R_{2}+C_{3}R_{1}+C_{2}R_{3}\right)\,s+1}$
+\begin_inset Formula $H(s)=\frac{C_{1}C_{2}C_{3}R_{1}R_{2}R_{3}s^{3}+\left(C_{1}C_{2}R_{1}R_{3}+C_{1}C_{2}R_{2}R_{3}\right)s^{2}+\left(C_{1}R_{3}+C_{2}R_{3}\right)s+1}{C_{1}C_{2}C_{3}R_{1}R_{2}R_{3}s^{3}+\left(C_{1}C_{2}R_{1}R_{3}+C_{1}C_{2}R_{2}R_{3}+C_{1}C_{3}R_{1}R_{3}+C_{2}C_{3}R_{1}R_{2}+C_{2}C_{3}R_{1}R_{3}\right)s^{2}+\left(C_{2}R_{1}+C_{1}R_{3}+C_{2}R_{2}+C_{3}R_{1}+C_{2}R_{3}\right)s+1}$
 \end_inset
 
 
@@ -331,11 +336,11 @@ Dado que el filtro buscado es de tipo notch, sabiendo que su función de
 \end_inset
 
 , se observa de aquí que en el caso en que se toma 
-\begin_inset Formula $R1=R2=2\cdot R3$
+\begin_inset Formula $R_{1}=R_{2}=2\cdot R_{3}$
 \end_inset
 
  y 
-\begin_inset Formula $C1=C2=\frac{C3}{2}$
+\begin_inset Formula $C_{1}=C_{2}=\frac{C_{3}}{2}$
 \end_inset
 
 , la función transferencia resultante queda reducida a :
@@ -772,7 +777,7 @@ Respuesta al impulso teórica
 
 \begin_layout Standard
 Análogamente, la respuesta al escalón será 
-\begin_inset Formula $y_{esc}\text{=}\{\frac{C_{3}^{2}\mathrm{R_{3}}^{2}s^{2}+1}{C_{3}^{2}R_{3}^{2}s^{3}+4\mathrm{C_{3}}R_{3}s^{2}+s}\}(t)$
+\begin_inset Formula $y_{esc}\text{=}\mathcal{L}^{-1}\{\frac{C_{3}^{2}\mathrm{R_{3}}^{2}s^{2}+1}{C_{3}^{2}R_{3}^{2}s^{3}+4\mathrm{C_{3}}R_{3}s^{2}+s}\}(t)$
 \end_inset
 
  y por lo tanto:
@@ -1052,7 +1057,7 @@ Luego, se procedió a verificar que efectivamente se anulara la frecuencia
  y es por eso que si bien el valor obtenido del osciloscopio es mucho menor
  y daría una relación entrada salida de un orden de magnitud de diferencia,
  en el gráfico se muestra cómo la amplitud de las sinusoidales de salida
- son notablemente superiores a las de la frecuencia de corte.
+ son claramente superiores a las de la frecuencia de corte.
  De esta manera se deduce que el filtro notch funciona correctamente.
 \end_layout
 
@@ -1085,7 +1090,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Salida y entrada en alrededores de la frecuencia de corte experimentalmente
+Salida y entrada en alrededores de la frecuencia de corte experimentalmente.
  
 \end_layout
 
