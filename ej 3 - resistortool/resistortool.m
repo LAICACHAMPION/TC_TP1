@@ -29,6 +29,9 @@ if t == 0 % si no, uso 5%
     t=5;
 end
 
+
+addpath('source');
+
 values = commercialValuesGenerator(t);
 minr = 0.1; maxr = 10*10^6; % de 0.1Ohm a 10MOhm
 

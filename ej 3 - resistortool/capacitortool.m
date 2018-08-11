@@ -25,6 +25,8 @@ if nargin >= 2
         t = tolerance(1); % si me pasaron una tolerancia valida la uso
     end
 end;
+
+addpath('source');
 if t == 0
     t=10; %si no, uso 10%
 end
