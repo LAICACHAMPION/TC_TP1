@@ -198,7 +198,7 @@ es que se puede seguir caracterizando al filtro, generando subcategorías
  dentro de la categoría notch:
 \end_layout
 
-\begin_layout Standard
+\begin_layout Itemize
 Si 
 \begin_inset Formula $\omega_{z}=\omega_{p}$
 \end_inset
@@ -206,7 +206,7 @@ Si
  el filtro se llama standard notch.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Itemize
 Si 
 \begin_inset Formula $\omega_{z}>\omega_{p}$
 \end_inset
@@ -214,7 +214,7 @@ Si
 el filtro se llama notch pasabajos.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Itemize
 Si 
 \begin_inset Formula $\omega_{z}<\omega_{p}$
 \end_inset
