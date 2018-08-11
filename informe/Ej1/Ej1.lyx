@@ -347,9 +347,9 @@ status open
 
 \begin_layout Plain Layout
 
-H(s)=
+
 \backslash
-[
+[H(s)=
 \backslash
 frac{{
 \backslash
@@ -397,9 +397,9 @@ status open
 
 \begin_layout Plain Layout
 
-H(s)=
+
 \backslash
-[
+[H(s)=
 \backslash
 frac{s^2 + 
 \backslash
@@ -486,8 +486,7 @@ Análisis teórico
 \end_layout
 
 \begin_layout Standard
-El bode resultante de la función de transferencia resultante de la subsección
- anterior es: 
+El bode resultante de la función de transferencia del circuito es: 
 \end_layout
 
 \begin_layout Standard
@@ -530,7 +529,7 @@ Bode teórico de la función de transferencia teórica del circuito diseñado
 \end_layout
 
 \begin_layout Standard
-que resulta ser un notch en la frecuencia de corte que requeríamos.
+que resulta ser un notch con la frecuencia de corte que requeríamos.
 \end_layout
 
 \begin_layout Standard
@@ -773,7 +772,7 @@ Respuesta al impulso teórica
 
 \begin_layout Standard
 Análogamente, la respuesta al escalón será 
-\begin_inset Formula $y_{esc}\text{=}\{\frac{C_{3}^{2}\mathrm{R_{3}}^{2}s^{2}+1}{C_{3}^{2}R_{3}^{2}s^{3}+4\mathrm{C_{3}}R_{3}s^{2}+s}\}(t)$
+\begin_inset Formula $y_{esc}\text{=}\mathcal{L}^{-1}\{\frac{C_{3}^{2}\mathrm{R_{3}}^{2}s^{2}+1}{C_{3}^{2}R_{3}^{2}s^{3}+4\mathrm{C_{3}}R_{3}s^{2}+s}\}(t)$
 \end_inset
 
  y por lo tanto:

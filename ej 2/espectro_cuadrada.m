@@ -16,7 +16,7 @@ end;
 
 
 xlabel('Frecuencia (Hz)');
-ylabel('?????')
+ylabel('Amplitud (V)')
 xlim([0 (N+1)*f]);
 set(gca,'color','none') 
 
