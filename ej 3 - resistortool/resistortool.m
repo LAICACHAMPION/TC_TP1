@@ -1,13 +1,13 @@
 function [ r1, r2, error, PorS ] = resistortool( r, tolerance, topology )
-% RESISTOR TOOL devuelve la mejor aproximacion al valor de r con los valores
-% comerciales existentes para la tolerancia indicada y con la topologia 
-% indicada (serie/paralelo)
+% RESISTOR TOOL devuelve la mejor aproximacion al valor de r con los 
+% valores comerciales existentes para la tolerancia indicada (5, 10 o 20) 
+% y con la topologia indicada ('s' para serie o 'p' para paralelo)
 %
 %    si la tolerancia no se indica o no es valida, se asume 5%
 %    si la topologia no se indica o no es valida se devuelve la que 
 %  aproxime mejor el valor pedido
 %    si el valor de r no es valido (<=0, o no es un unico numero) se 
-% devuelve -1 en todos los resultados
+%  devuelve -1 en todos los resultados
 
 if nargin == 0 %verifico que me hayan pasado r
     return;
