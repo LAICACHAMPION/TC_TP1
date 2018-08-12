@@ -202,9 +202,7 @@ Omega$ y $10M
 \backslash
 Omega$.
 \backslash
-
-\backslash
-
+par
 \end_layout
 
 \begin_layout Plain Layout
@@ -232,6 +230,8 @@ geq 100$).
 \backslash
 geq r$ (en cuyo caso $r2=0$) o $r1+r2>r$, y se van guardando los valores
  que resultan en menor error relativo.
+\backslash
+par
 \end_layout
 
 \begin_layout Plain Layout
@@ -244,9 +244,7 @@ En la combinaci
 \backslash
 'on en serie, y se vuelve a resistencia.
 \backslash
-
-\backslash
-
+par
 \end_layout
 
 \begin_layout Plain Layout
@@ -263,6 +261,8 @@ Debido a los errores de aproximaci
 'ia que se est
 \backslash
 'e usando.
+\backslash
+par
 \end_layout
 
 \begin_layout Plain Layout
