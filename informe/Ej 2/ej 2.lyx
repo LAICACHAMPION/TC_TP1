@@ -214,7 +214,13 @@ cdot 4.7nF
 \backslash
 cdot 500
 \backslash
-Omega} = 67.7KHz$
+Omega} = 67.7KHz$ y un tiempo caracter
+\backslash
+'istico $
+\backslash
+uptau = 2.35
+\backslash
+mu s$
 \end_layout
 
 \end_inset
@@ -245,7 +251,20 @@ status collapsed
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Respuesta del filtro RC a 32KHz
+Simulaci
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+'o
+\end_layout
+
+\end_inset
+
+n respuesta del filtro RC a 32KHz
 \end_layout
 
 \end_inset
@@ -281,7 +300,20 @@ status collapsed
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Respuesta del filtro RC a 32KHz
+Medici
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+'o
+\end_layout
+
+\end_inset
+
+n respuesta del filtro RC a 32KHz
 \end_layout
 
 \end_inset
@@ -452,22 +484,76 @@ tensi
 
 \end_inset
 
- real de entrada al filtro durante la carga sea 
+ real de entrada al filtro 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$V_in$
+\end_layout
+
+\end_inset
+
+ durante la carga sea 
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $V_{sal}=5V-V_{ri}=0.91\cdot5V\ +0.09\cdot V_{C}$
+\begin_inset Formula $V_{in}=5V-V_{ri}=0.91\cdot5V\ +0.09\cdot V_{C}$
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
-REEMPLAZO CON LA FORMULA DE V_C Y OBTENGO Vsal EN CARGA Y DESCARGA
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Cuando $V_c 
+\backslash
+approx V_g (= 5V)$, $V_{in} 
+\backslash
+approx 5V$
+\end_layout
+
+\begin_layout Plain Layout
+
+Dado que el tiempo de carga (mitad del periodo) es mayor que $5
+\backslash
+uptau$, ($15.625
+\backslash
+mu s$ y $11.75
+\backslash
+mu s$ respectivamente), despues de los $11.75
+\backslash
+mu s$ se observa que $V_C 
+\backslash
+approx 5V$.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-ALGO SOBRE 5TAU Y F0/2
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+El an
+\backslash
+'alisis para la descarga es an
+\backslash
+'alogo.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -538,10 +624,6 @@ $10V_{pp}$
 
 \begin_layout Standard
 //TODO: grafico bode
-\end_layout
-
-\begin_layout Standard
-DECIR ALGO SOBRE EL ESPECTRO DE LA CUADRADA ALGUN #DATAZO
 \end_layout
 
 \begin_layout Subsection
@@ -810,7 +892,9 @@ phase{X_n} +
 \backslash
 phase{H(s)} = -arctg(2
 \backslash
-pi RC), n>0 impar 
+pi RC), n>0,
+\backslash
+,impar 
 \backslash
 ]
 \end_layout
@@ -839,7 +923,9 @@ frac{1}{
 \backslash
 sqrt{(2
 \backslash
-pi fRC)^2+1}}, n>0 impar
+pi fRC)^2+1}}, n>0,
+\backslash
+, impar
 \backslash
 ]
 \end_layout
@@ -865,11 +951,11 @@ Se puede comprobar gr
 \end_inset
 
  son los correctos graficando 
-\begin_inset Formula $\sum\phase{X_{n\}}}\cdot X_{n}$
+\begin_inset Formula $\sum X_{n}\cdot\phase{X_{n}}$
 \end_inset
 
  y 
-\begin_inset Formula $\sum\phase{Y_{n\}}}\cdot Y_{n}$
+\begin_inset Formula $\sum Y_{n}\cdot\phase{Y_{n}}$
 \end_inset
 
 .
@@ -896,7 +982,7 @@ t
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -912,7 +998,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Serie de armonicos de entrada (1000 terminos)
+Serie de armonicos de entrada (hasta 1000 terminos)
 \end_layout
 
 \end_inset
@@ -931,7 +1017,7 @@ Serie de armonicos de entrada (1000 terminos)
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -948,7 +1034,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Serie de armonicos de salida (1000 terminos)
+Serie de armonicos de salida (hasta 1000 terminos)
 \end_layout
 
 \end_inset
@@ -989,31 +1075,20 @@ status collapsed
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Espectro de 
+Simulaci
 \begin_inset ERT
 status open
 
 \begin_layout Plain Layout
 
-se
+
 \backslash
-~nal
+'o
 \end_layout
 
 \end_inset
 
- de entrada (cuadrada 32KHz, 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-$10V_{pp}$
-\end_layout
-
-\end_inset
-
- sin valor medio)
+n respuesta del filtro RC a 640KHz
 \end_layout
 
 \end_inset
@@ -1049,7 +1124,20 @@ status collapsed
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Respuesta del filtro RC a 640KHz
+Medici
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+'o
+\end_layout
+
+\end_inset
+
+n respuesta del filtro RC a 32KHz
 \end_layout
 
 \end_inset
@@ -1076,7 +1164,17 @@ per
 
 \end_inset
 
- es 10 veces menor que el tiempo 
+ es
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+ 10 veces menor (mentira)
+\end_layout
+
+\end_inset
+
+que el tiempo 
 \begin_inset ERT
 status open
 
@@ -1115,7 +1213,7 @@ status open
 
 $
 \backslash
-frac{V_max}{
+frac{V_{max}}{
 \backslash
 uptau}$
 \end_layout
@@ -1131,25 +1229,13 @@ uptau}$
 \end_layout
 
 \begin_layout Standard
-Como la pendiente es 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-$
-\backslash
-frac{V_max}{
-\backslash
-uptau}$
+La funcion de transferencia de este circuito no corresponde con la de un
+ integrador, ya que tiene un polo en el semiplano negativo y no en el origen.
+ Sin embargo, para altas frecuencias su comportamiento tiende al de un integrado
+r:
 \end_layout
 
-\end_inset
-
-, funciona como un integrador que ademas divide por tau.
- Otra forma de ver que se comporta como un integrador es analizando su funcion
- de transferencia.
- Si 
+\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -1171,9 +1257,7 @@ gg 1
 \backslash
 Rightarrow H(s) = 
 \backslash
-frac{1}{
-\backslash
-frac{s}{RC} +1} 
+frac{1}{sRC +1} 
 \backslash
 approx 
 \backslash
@@ -1186,6 +1270,35 @@ frac{1}{s}$
 
 \end_inset
 
+Como la pendiente es 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$
+\backslash
+frac{V_{max}}{
+\backslash
+uptau}$
+\end_layout
+
+\end_inset
+
+, funciona como un integrador que ademas divide por 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$
+\backslash
+uptau$
+\end_layout
+
+\end_inset
+
+.
  
 \end_layout
 
