@@ -118,46 +118,12 @@ status open
 
 
 \backslash
-[ V_g = V_R + V_C 
-\backslash
-]
-\end_layout
-
-\begin_layout Plain Layout
-
-Se puede modelar la tensi
-\backslash
-'on en el capacitor de un circuito RC en respuesta a la onda cuadrada sabiendo
- la respuesta al escal
-\backslash
-'on:
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-[ V_C = V_g(1-e^{-
-\backslash
-frac{t}{RC}})
-\backslash
-].
+textbf{Funcion transferencia:}
 \end_layout
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Subsection
-Analizar y explicar los resultados obtenidos.
-\end_layout
-
-\begin_layout Standard
-Funcion transferencia: 
-\end_layout
-
-\begin_layout Standard
+ 
 \begin_inset Formula 
 \begin{equation}
 H(s)=\frac{\frac{1}{sC}}{\frac{1}{sC}+R}=\frac{1}{sCR+1}=\frac{1}{\frac{s}{\frac{1}{RC}}+1}\label{eq:transferencia_RC}
@@ -229,29 +195,7 @@ mu s$
 \end_layout
 
 \begin_layout Standard
-\align center
-\begin_inset Float figure
-placement H
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename imagenes/simulacion transitorio filtro pasabajos rc 64K entrada 32k.PNG
-	scale 60
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Simulaci
+La tensi
 \begin_inset ERT
 status open
 
@@ -264,13 +208,38 @@ status open
 
 \end_inset
 
-n respuesta del filtro RC a 32KHz
+n 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$V_C$
 \end_layout
 
 \end_inset
 
+ en un circuito RC en respuesta a un escal
+\begin_inset ERT
+status open
 
+\begin_layout Plain Layout
+
+
+\backslash
+'on
 \end_layout
+
+\end_inset
+
+ es 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+V_{C}=V_{g}(1-e^{-\frac{t}{RC}})
+\]
 
 \end_inset
 
@@ -278,29 +247,18 @@ n respuesta del filtro RC a 32KHz
 \end_layout
 
 \begin_layout Standard
-\align center
-\begin_inset Float figure
-placement H
-wide false
-sideways false
-status collapsed
+siendo 
+\begin_inset ERT
+status open
 
 \begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename imagenes/medicion transitorio filtro pasabajos rc 64k entrada 32k.png
-	scale 35
+
+$V_g$
+\end_layout
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Medici
+ la altura del escal
 \begin_inset ERT
 status open
 
@@ -308,247 +266,20 @@ status open
 
 
 \backslash
-'o
-\end_layout
-
-\end_inset
-
-n respuesta del filtro RC a 32KHz
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-DIBUJO BODE
-\end_layout
-
-\begin_layout Standard
-La 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-se
-\backslash
-~nal
-\end_layout
-
-\end_inset
-
- de entrada no es perfectamente cuadrada.
- Esto se debe a que la resistencia elegida (
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-$500
-\backslash
-Omega$
-\end_layout
-
-\end_inset
-
-) es comparable con la resistencia interna del generador (
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-$50
-\backslash
-Omega$
-\end_layout
-
-\end_inset
-
-).
- Por ley de mallas de Kirchhoff, en un circuito RC serie ideal, la 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-tensi
-\backslash
-'on 
-\end_layout
-
-\end_inset
-
-en la resistencia es 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-$V_R = V_g - V_C$
+'on
 \end_layout
 
 \end_inset
 
 .
- En el caso real, la resistencia es una 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-combinaci
-\backslash
-'on en serie 
-\end_layout
-
-\end_inset
-
-de la resistencia interna del generador 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-$r_i$
-\end_layout
-
-\end_inset
-
- y la resistencia del filtro 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-$R$
-\end_layout
-
-\end_inset
-
-, resultando en que la 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-tensi
-\backslash
-'on
-\end_layout
-
-\end_inset
-
- en la resistencia interna durante la carga sea 
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
+\begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
-
-
-\backslash
-[V_{ri} = V_R
-\backslash
-frac{r_i}{R+ri} = (5V - V_C)
-\backslash
-cdot 0.09
-\backslash
-]
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-y que la 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-tensi
-\backslash
-'on
-\end_layout
-
-\end_inset
-
- real de entrada al filtro 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-$V_in$
-\end_layout
-
-\end_inset
-
- durante la carga sea 
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula $V_{in}=5V-V_{ri}=0.91\cdot5V\ +0.09\cdot V_{C}$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-Cuando $V_c 
-\backslash
-approx V_g (= 5V)$, $V_{in} 
-\backslash
-approx 5V$
-\end_layout
-
-\begin_layout Plain Layout
-
-Dado que el tiempo de carga (mitad del periodo) es mayor que $5
-\backslash
-uptau$, ($15.625
-\backslash
-mu s$ y $11.75
-\backslash
-mu s$ respectivamente), despues de los $11.75
-\backslash
-mu s$ se observa que $V_C 
-\backslash
-approx 5V$.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-El an
-\backslash
-'alisis para la descarga es an
-\backslash
-'alogo.
+mencionar la funcion de transferencia de un integrador si es que pinta.
 \end_layout
 
 \end_inset
@@ -557,9 +288,7 @@ El an
 \end_layout
 
 \begin_layout Subsection
-Realizar un diagrama espectral te´orico de las componentes de la se˜nal
- de entrada y superponerlo con la respuesta en frecuencia del filtro.
- 
+ANALISIS ESPECTRAL
 \end_layout
 
 \begin_layout Standard
@@ -568,7 +297,7 @@ Realizar un diagrama espectral te´orico de las componentes de la se˜nal
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -623,15 +352,6 @@ $10V_{pp}$
 \end_layout
 
 \begin_layout Standard
-//TODO: grafico bode
-\end_layout
-
-\begin_layout Subsection
-Calcular de forma te´orica como afecta el filtro a cada una de las componentes
- de la se˜nal.
-\end_layout
-
-\begin_layout Standard
 La 
 \begin_inset ERT
 status open
@@ -659,24 +379,23 @@ $5V_{pp}$  de frecuencia $f_0 = 32KHz$
 puede definirse por su desarrolo en serie de Fourier como 
 \begin_inset Formula 
 \begin{equation}
-5V\cdot\sum\frac{4}{n\pi}sen(2\pi nf_{0}t)\label{eq:DSF_cuadrada}
+5V\cdot\sum\frac{4}{n\pi}sen(2\pi nf_{0}t),\,n>0,\,impar\label{eq:DSF_cuadrada}
 \end{equation}
 
 \end_inset
 
- para todo 
+ A cada 
 \begin_inset ERT
 status open
 
 \begin_layout Plain Layout
 
-$n>0$
+$n$
 \end_layout
 
 \end_inset
 
- impar.
- A cada n le corresponde un 
+ le corresponde un 
 \begin_inset ERT
 status open
 
@@ -719,7 +438,7 @@ $X_n$
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-X_{n}=\frac{20}{n\pi}V,\,\phase{X_{n}}=0^{\circ}\label{eq:parametros_cuadrada}
+\abs{X_{n}}=\frac{20}{n\pi}V,\,\phase{X_{n}}=0^{\circ}\label{eq:parametros_cuadrada}
 \end{equation}
 
 \end_inset
@@ -838,7 +557,20 @@ m
 
 \end_inset
 
- y la fase de las componentes 
+ y la fase de los arm
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+'o
+\end_layout
+
+\end_inset
+
+nicos 
 \begin_inset ERT
 status open
 
@@ -951,16 +683,41 @@ Se puede comprobar gr
 \end_inset
 
  son los correctos graficando 
-\begin_inset Formula $\sum X_{n}\cdot\phase{X_{n}}$
+\begin_inset Formula $\sum\abs{X_{n}}\cdot sen(2\pi nf_{0}t+\phase{X_{n}})$
 \end_inset
 
  y 
-\begin_inset Formula $\sum Y_{n}\cdot\phase{Y_{n}}$
+\begin_inset Formula $\sum\abs{Y_{n}}\cdot sen(2\pi nf_{0}t+\phase{Y_{n}})$
 \end_inset
 
 .
- Se muestra la suma de los armonicos antes y despues de ser modificados
- por el filtro hasta el 
+ Se muestra la suma de los arm
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+'o
+\end_layout
+
+\end_inset
+
+nicos antes y despu
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+'e
+\end_layout
+
+\end_inset
+
+s de ser modificados por el filtro hasta el 
 \begin_inset ERT
 status open
 
@@ -988,6 +745,7 @@ status collapsed
 \align center
 \begin_inset Graphics
 	filename imagenes/serie cuadrada.PNG
+	scale 70
 
 \end_inset
 
@@ -998,12 +756,36 @@ status collapsed
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Serie de armonicos de entrada (hasta 1000 terminos)
+Sumatoria de arm
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+'o
+\end_layout
+
+\end_inset
+
+nicos de entrada (hasta 1000 terminos)
 \end_layout
 
 \end_inset
 
 
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+%serie cuadrada
 \end_layout
 
 \end_inset
@@ -1034,12 +816,23 @@ status collapsed
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Serie de armonicos de salida (hasta 1000 terminos)
+Sumatoria de armonicos de salida (hasta 1000 terminos)
 \end_layout
 
 \end_inset
 
 
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+%serie respuesta
 \end_layout
 
 \end_inset
@@ -1048,8 +841,403 @@ Serie de armonicos de salida (hasta 1000 terminos)
 \end_layout
 
 \begin_layout Subsection
-Aplicar una se˜nal de las mismas caracter´ısticas pero con frecuencia 160Hz
- · N y obtener conclusiones comparando los resultados con ambas se˜nales.
+SIMULACIONES Y MEDICIONES
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenes/bode.png
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Respuesta en frecuencia del filtro
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{Entrada a 32KHz:}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenes/simulacion transitorio filtro pasabajos rc 64K entrada 32k.PNG
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Simulaci
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+'o
+\end_layout
+
+\end_inset
+
+n respuesta del filtro RC a 32KHz
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenes/medicion transitorio filtro pasabajos rc 64k entrada 32k.png
+	scale 25
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Medici
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+'o
+\end_layout
+
+\end_inset
+
+n respuesta del filtro RC a 32KHz
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+se
+\backslash
+~nal
+\end_layout
+
+\end_inset
+
+ de entrada no es perfectamente cuadrada.
+ Esto se debe a que la resistencia elegida (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$500
+\backslash
+Omega$
+\end_layout
+
+\end_inset
+
+) es comparable con la resistencia interna del generador (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$50
+\backslash
+Omega$
+\end_layout
+
+\end_inset
+
+).
+ Por ley de mallas de Kirchhoff, en un circuito RC serie ideal la 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+tensi
+\backslash
+'on 
+\end_layout
+
+\end_inset
+
+en la resistencia es 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$V_R = V_g - V_C$
+\end_layout
+
+\end_inset
+
+.
+ En el caso real, la resistencia puede modelarse como la 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+combinaci
+\backslash
+'on en serie 
+\end_layout
+
+\end_inset
+
+de la resistencia interna del generador 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$r_i$
+\end_layout
+
+\end_inset
+
+ y la resistencia del filtro 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$R$
+\end_layout
+
+\end_inset
+
+, resultando en que la 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+tensi
+\backslash
+'on
+\end_layout
+
+\end_inset
+
+ en la resistencia interna durante la carga sea 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+[V_{ri} = V_R
+\backslash
+frac{r_i}{R+ri} = (5V - V_C)
+\backslash
+cdot 0.09
+\backslash
+]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+y que la 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+tensi
+\backslash
+'on
+\end_layout
+
+\end_inset
+
+ real de entrada al filtro 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$V_{in}$
+\end_layout
+
+\end_inset
+
+ durante la carga sea 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $V_{in}=5V-V_{ri}=0.91\cdot5V\ +0.09\cdot V_{C}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Cuando $V_c 
+\backslash
+approx V_g (= 5V)$, $V_{in} 
+\backslash
+approx 5V$
+\end_layout
+
+\begin_layout Plain Layout
+
+Dado que el tiempo de carga (mitad del per
+\backslash
+'iodo) es mayor que $5
+\backslash
+uptau$, ($15.625
+\backslash
+mu s$ y $11.75
+\backslash
+mu s$ respectivamente), despu
+\backslash
+'es de 5$
+\backslash
+uptau$ se observa que $V_C 
+\backslash
+approx 5V$.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+El an
+\backslash
+'alisis para la descarga es an
+\backslash
+'alogo.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{Entrada a 32KHz:}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1151,30 +1339,8 @@ n respuesta del filtro RC a 32KHz
 \end_layout
 
 \begin_layout Standard
-Como el 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-per
-\backslash
-'iodo
-\end_layout
-
-\end_inset
-
- es
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
- 10 veces menor (mentira)
-\end_layout
-
-\end_inset
-
-que el tiempo 
+Como el tiempo de carga o de descarga es considerablemente menor que el
+ tiempo 
 \begin_inset ERT
 status open
 
@@ -1202,10 +1368,35 @@ tensi
 
 \end_inset
 
- del capacitor ni la tension de salida del generador llegas a su valor en
+ del capacitor ni la tension de salida del generador llega a su valor en
  permanente (+5V o -5V).
- Tambien por el mismo motivo la tension del capacitor varia linealmente
- con una pendiente 
+ Tambi
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+'e
+\end_layout
+
+\end_inset
+
+n por el mismo motivo la tensi
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+'o
+\end_layout
+
+\end_inset
+
+n del capacitor varia linealmente con una pendiente 
 \begin_inset ERT
 status open
 
@@ -1220,19 +1411,130 @@ uptau}$
 
 \end_inset
 
-.
- (ver referencia al grafiquito que hizo rochi con tanto amor).
+ (figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:aprox_lineal_carga"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenes/derivada_Vc_en_t=0.png
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Aproximaci
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+'o
+\end_layout
+
+\end_inset
+
+n lineal de la carga del capacitor para 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$t<<
+\backslash
+uptau$
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:aprox_lineal_carga"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
-¿Se puede utilizar el sistema como integrador? 
+USO COMO INTEGRADOR
 \end_layout
 
 \begin_layout Standard
 La funcion de transferencia de este circuito no corresponde con la de un
  integrador, ya que tiene un polo en el semiplano negativo y no en el origen.
- Sin embargo, para altas frecuencias su comportamiento tiende al de un integrado
-r:
+ Sin embargo, para frecuencias mucho mayores a 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$f_0$
+\end_layout
+
+\end_inset
+
+ su comportamiento tiende al de un integrador que adem
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+'a
+\end_layout
+
+\end_inset
+
+s divide por 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$
+\backslash
+uptau$:
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1241,17 +1543,17 @@ status open
 
 \begin_layout Plain Layout
 
-$f 
+
+\backslash
+[ f 
 \backslash
 gg 
 \backslash
 frac{1}{RC} 
 \backslash
-Rightarrow 
+Rightarrow {2
 \backslash
-frac{2
-\backslash
-pi f}{RC} 
+pi f RC} 
 \backslash
 gg 1 
 \backslash
@@ -1265,41 +1567,111 @@ frac{1}{RC}
 \backslash
 cdot 
 \backslash
-frac{1}{s}$
+frac{1}{s}
+\backslash
+]
 \end_layout
 
 \end_inset
 
-Como la pendiente es 
+
+\end_layout
+
+\begin_layout Standard
+Esto coincide con el caso particular del filtro a 
 \begin_inset ERT
 status open
 
 \begin_layout Plain Layout
 
-$
+$640KHz$, en donde la salida tiene pendiente $
 \backslash
-frac{V_{max}}{
+pm 
 \backslash
-uptau}$
+frac{5V}{
+\backslash
+uptau}$(dependiendo de si $V_g = 
+\backslash
+pm 5V$), con $
+\backslash
+uptau = 0.78
+\backslash
+mu s$
 \end_layout
 
 \end_inset
 
-, funciona como un integrador que ademas divide por 
-\begin_inset ERT
+
+\begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
-
-$
-\backslash
-uptau$
+chequear el valor
 \end_layout
 
 \end_inset
 
 .
- 
+ Por el contrario, en el caso en que 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$f = 32KHz < 
+\backslash
+frac{1}{RC}$
+\end_layout
+
+\end_inset
+
+, la respuesta ya no puede aproximarse a una triangular y deja de ser una
+ representaci
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+'on
+\end_layout
+
+\end_inset
+
+ cercana de la integral de la entrada.
+\end_layout
+
+\begin_layout Standard
+Por 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+'ultimo,
+\end_layout
+
+\end_inset
+
+ por 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+m
+\backslash
+'as que se cumpla la desigualdad ya mencionada, el filtro solo puede usarse
+ como integrador de funciones con valor medio cero.
+ En caso contrario, no se trataria de un sistema estable.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_body
