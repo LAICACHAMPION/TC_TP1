@@ -1,0 +1,4 @@
+Circuit: * C:\Users\Tomas\Desktop\ITBA\7° Cuatrimestre\Teoría de Circuitos\Trabajos Prácticos\TC_TP1\informe\Ej1\Draft1.asc
+
+Fatal Error: Port(pin) count mismatch between the definition of subcircuit "opamp" and instance: "xu1"
+The instance has more connection terminals than the definition.
