@@ -15,6 +15,7 @@
 \usepackage[textwidth=14cm]{geometry}	%texto ocupa mas ancho de pagina
 \usepackage{xcolor}		%se usa en \code
 
+\usepackage[american]{circuitikz}
 
 \usepackage[parfill]{parskip}		%pone espacio entre parrafos
 \setlength{\parindent}{10pt}		%cuanta sangria al principio de un parrafo
@@ -118,15 +119,236 @@ status open
 
 
 \backslash
-textbf{Funcion transferencia:}
+begin{circuitikz}[scale=2]
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+def
+\backslash
+xPortLeft{0}
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+def
+\backslash
+yTerminalBottom{0}
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+def
+\backslash
+yL{1.5}
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+def
+\backslash
+xL{1}
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+def
+\backslash
+xR{1.75}
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+def
+\backslash
+xC{2.25}
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+def
+\backslash
+xPortRight{3}
+\end_layout
+
+\begin_layout Plain Layout
+
+    % left loop
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+draw                               (
+\backslash
+xPortLeft,
+\backslash
+yL)
+\end_layout
+
+\begin_layout Plain Layout
+
+            to[L=$L$, o-]               (
+\backslash
+xL, 
+\backslash
+yL)
+\end_layout
+
+\begin_layout Plain Layout
+
+            to[R=$R$]                   (
+\backslash
+xR, 
+\backslash
+yL)
+\end_layout
+
+\begin_layout Plain Layout
+
+            to[short]                   (
+\backslash
+xC,
+\backslash
+yL)
+\end_layout
+
+\begin_layout Plain Layout
+
+            to[C, l_=$C$,*-*]           (
+\backslash
+xC,
+\backslash
+yTerminalBottom)
+\end_layout
+
+\begin_layout Plain Layout
+
+            to[short,i=$i(t)$]          (
+\backslash
+xPortLeft,
+\backslash
+yTerminalBottom)
+\end_layout
+
+\begin_layout Plain Layout
+
+            to[open,v^>=$v_1(t)$,o-o]   (
+\backslash
+xPortLeft,
+\backslash
+yL);
+\end_layout
+
+\begin_layout Plain Layout
+
+    % right branch
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+draw                               (
+\backslash
+xC,
+\backslash
+yL)
+\end_layout
+
+\begin_layout Plain Layout
+
+            to[short]                   (
+\backslash
+xPortRight,
+\backslash
+yL)
+\end_layout
+
+\begin_layout Plain Layout
+
+            to[open,v^=$v_2(t)$,o-o]    (
+\backslash
+xPortRight,
+\backslash
+yTerminalBottom)
+\end_layout
+
+\begin_layout Plain Layout
+
+            to[short]                   (
+\backslash
+xC,
+\backslash
+yTerminalBottom);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{circuitikz}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{Funcion transferencia filtro pasabajos RC:}
 \end_layout
 
 \end_inset
 
  
 \begin_inset Formula 
+\[
+H(s)=\frac{\frac{1}{sC}}{\frac{1}{sC}+R}=\frac{1}{sCR+1}=\frac{1}{\frac{s}{\frac{1}{RC}}+1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
 \begin{equation}
-H(s)=\frac{\frac{1}{sC}}{\frac{1}{sC}+R}=\frac{1}{sCR+1}=\frac{1}{\frac{s}{\frac{1}{RC}}+1}\label{eq:transferencia_RC}
+\phase{H(s)}=\phase{\frac{1}{sCR+1}}=-arctg(2\pi fRC)\label{eq:fase_transferencia_RC}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\abs{H(s)}=\abs{\frac{1}{sCR+1}}=\frac{1}{\sqrt{(2\pi fRC)^{2}+1}}\label{eq:modulo_transferencia_RC}
 \end{equation}
 
 \end_inset
@@ -275,16 +497,49 @@ status open
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
+\begin_inset ERT
 status open
 
 \begin_layout Plain Layout
-mencionar la funcion de transferencia de un integrador si es que pinta.
+
+
+\backslash
+textbf{Funci
+\backslash
+'on transferencia integrador}
 \end_layout
 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+La 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+funci
+\backslash
+'on
+\end_layout
+
+\end_inset
+
+ transferencia de un integrador es 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H(s)=\frac{1}{s}
+\]
+
+\end_inset
+
+ 
 \end_layout
 
 \begin_layout Subsection
@@ -297,7 +552,7 @@ ANALISIS ESPECTRAL
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -403,12 +658,12 @@ status open
 
 arm
 \backslash
-'onico 
+'onico
 \end_layout
 
 \end_inset
 
-de la 
+ de la 
 \begin_inset ERT
 status open
 
@@ -447,100 +702,28 @@ $X_n$
 \end_layout
 
 \begin_layout Standard
+Combinando con la ganancia y el desfasaje de la 
 \begin_inset ERT
 status open
 
 \begin_layout Plain Layout
 
-De la funcion transferencia (ecuaci
-\backslash
-'on 
-\backslash
-ref{eq:transferencia_RC}) obtenemos:
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-[ 
-\backslash
-phase{H(s)} = 
-\backslash
-phase{
-\backslash
-frac{1}{sCR+1}} =  -arctg(2
-\backslash
-pi RC)
-\backslash
-]
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-[ 
-\backslash
-abs{H(s)} = 
-\backslash
-abs{
-\backslash
-frac{1}{sCR+1}} =  
-\backslash
-frac{1}{
-\backslash
-sqrt{(2
-\backslash
-pi fRC)^2+1}}
-\backslash
-]
+$H(s)$
 \end_layout
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
-Combinado con el 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-m
-\backslash
-'odulo
-\end_layout
+ (ecuaciones 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:modulo_transferencia_RC"
 
 \end_inset
 
- y la fase de los arm
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-'o
-\end_layout
-
-\end_inset
-
-nicos de entrada, (ecuaci
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-'on 
-\backslash
-ref{eq:parametros_cuadrada}
-\end_layout
+ y 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:fase_transferencia_RC"
 
 \end_inset
 
@@ -856,7 +1039,7 @@ status collapsed
 \align center
 \begin_inset Graphics
 	filename imagenes/bode.png
-	scale 70
+	scale 50
 
 \end_inset
 
@@ -902,13 +1085,13 @@ textbf{Entrada a 32KHz:}
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
 	filename imagenes/simulacion transitorio filtro pasabajos rc 64K entrada 32k.PNG
-	scale 50
+	scale 45
 
 \end_inset
 
@@ -951,7 +1134,7 @@ n respuesta del filtro RC a 32KHz
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -1246,13 +1429,13 @@ textbf{Entrada a 32KHz:}
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
 	filename imagenes/simulacion transitorio filtro pasabajos rc 64K entrada 640k zoom.PNG
-	scale 60
+	scale 45
 
 \end_inset
 
@@ -1295,13 +1478,13 @@ n respuesta del filtro RC a 640KHz
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
 	filename imagenes/medicion transitorio filtro pasabajos rc 64k entrada 640k.png
-	scale 40
+	scale 25
 
 \end_inset
 
@@ -1427,7 +1610,7 @@ reference "fig:aprox_lineal_carga"
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
