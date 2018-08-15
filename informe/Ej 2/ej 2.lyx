@@ -526,174 +526,6 @@ textbf{Funci
 
 \end_layout
 
-\begin_layout Standard
-La 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-funci
-\backslash
-'on
-\end_layout
-
-\end_inset
-
- transferencia de un integrador es 
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\begin{equation}
-H(s)=\frac{1}{s}\label{eq:transferencia_integrador}
-\end{equation}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-'Esta
-\end_layout
-
-\end_inset
-
- no coincide con la 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-funci
-\backslash
-'on
-\end_layout
-
-\end_inset
-
- transferencia del filtro pasabajos (ecuaci
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-'o
-\end_layout
-
-\end_inset
-
-n 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "eq:transferencia_RC"
-
-\end_inset
-
-), ya que tiene un polo en el origen y no en la parte negativa del eje real.
- Sin embargo, para frecuencias mucho mayores a 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-$f_0$
-\end_layout
-
-\end_inset
-
- la funci
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-'o
-\end_layout
-
-\end_inset
-
-n del filtro tiende a la de un integrador que adem
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-'a
-\end_layout
-
-\end_inset
-
-s divide por 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-$
-\backslash
-uptau$:
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-[ f 
-\backslash
-gg 
-\backslash
-frac{1}{RC} 
-\backslash
-Rightarrow {2
-\backslash
-pi f RC} 
-\backslash
-gg 1 
-\backslash
-Rightarrow H(s) = 
-\backslash
-frac{1}{sRC +1} 
-\backslash
-approx 
-\backslash
-frac{1}{RC}
-\backslash
-cdot 
-\backslash
-frac{1}{s}
-\backslash
-]
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Subsection
 ANALISIS ESPECTRAL
 \end_layout
@@ -1085,7 +917,7 @@ t
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -1137,6 +969,23 @@ status open
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Debe hacerse notar que en los saltos de la señal cuadrada aparece un sobrepico
+ que debe tenerse en cuenta a la hora de diseñar un circuito.
+ La causa de este sobrepico es explicada por el fenómeno de Gibbs: dado
+ que la señal cuadrada posee una discontinuidad de tipo salto en la transición
+ entre pico y pico y que su descomposición en series de fourier converge
+ a la semisuma 
+\begin_inset Formula $S_{N}(X_{0})=\frac{f(X_{0}^{+})+f(X_{0}^{-})}{2}$
+\end_inset
+
+, se observa que al no poder generar con una fuente real los infinitos armónicos
+ que comprenden la serie, al ir agregando términos a la suma aparecerá el
+ sobrepico en cuestión, que se irá acercando a la discontinuidad con cada
+ término pero no llegará a la cuadrada ideal nunca.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -2110,6 +1959,171 @@ USO COMO INTEGRADOR
 \end_layout
 
 \begin_layout Standard
+La 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+funci
+\backslash
+'on
+\end_layout
+
+\end_inset
+
+ transferencia de un integrador es 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+H(s)=\frac{1}{s}\label{eq:transferencia_integrador}
+\end{equation}
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+'Esta
+\end_layout
+
+\end_inset
+
+ no coincide con la 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+funci
+\backslash
+'on
+\end_layout
+
+\end_inset
+
+ transferencia del filtro pasabajos (ecuaci
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+'o
+\end_layout
+
+\end_inset
+
+n 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:transferencia_RC"
+
+\end_inset
+
+), ya que tiene un polo en el origen y no en la parte negativa del eje real.
+ Sin embargo, para frecuencias mucho mayores a 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$f_0$
+\end_layout
+
+\end_inset
+
+ la funci
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+'o
+\end_layout
+
+\end_inset
+
+n del filtro tiende a la de un integrador que adem
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+'a
+\end_layout
+
+\end_inset
+
+s divide por 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$
+\backslash
+uptau$:
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+[ f 
+\backslash
+gg 
+\backslash
+frac{1}{RC} 
+\backslash
+Rightarrow {2
+\backslash
+pi f RC} 
+\backslash
+gg 1 
+\backslash
+Rightarrow H(s) = 
+\backslash
+frac{1}{sRC +1} 
+\backslash
+approx 
+\backslash
+frac{1}{RC}
+\backslash
+cdot 
+\backslash
+frac{1}{s}
+\backslash
+]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 Esto coincide con el caso particular del filtro a 
 \begin_inset ERT
 status open
@@ -2126,7 +2140,7 @@ uptau}$(dependiendo de si $V_g =
 \backslash
 pm 5V$), con $
 \backslash
-uptau = 0.78
+uptau = 2.35
 \backslash
 mu s$
 \end_layout
@@ -2199,6 +2213,15 @@ m
 'as que se cumpla la desigualdad ya mencionada, el filtro solo puede usarse
  como integrador de funciones con valor medio cero.
  En caso contrario, no se trataria de un sistema estable.
+\end_layout
+
+\begin_layout Plain Layout
+
+Dado que el integrador divide por 
+\backslash
+uptau, se debería utilizar un multiplicador fácilmente implementable con
+ amplificadores operacionales para obtener la señal integrada en la proporción
+ correcta.
 \end_layout
 
 \begin_layout Plain Layout
