@@ -327,7 +327,37 @@ transfer será por lo tanto la transferencia, que queda:
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $H(s)=\frac{C_{1}C_{2}C_{3}R_{1}R_{2}R_{3}s^{3}+\left(C_{1}C_{2}R_{1}R_{3}+C_{1}C_{2}R_{2}R_{3}\right)s^{2}+\left(C_{1}R_{3}+C_{2}R_{3}\right)s+1}{C_{1}C_{2}C_{3}R_{1}R_{2}R_{3}s^{3}+\left(C_{1}C_{2}R_{1}R_{3}+C_{1}C_{2}R_{2}R_{3}+C_{1}C_{3}R_{1}R_{3}+C_{2}C_{3}R_{1}R_{2}+C_{2}C_{3}R_{1}R_{3}\right)s^{2}+\left(C_{2}R_{1}+C_{1}R_{3}+C_{2}R_{2}+C_{3}R_{1}+C_{2}R_{3}\right)s+1}$
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$H(s)=$ 
+\backslash
+
+\backslash
+ $
+\backslash
+frac{C_{1}C_{2}C_{3}R_{1}R_{2}R_{3}s^{3}+
+\backslash
+left(C_{1}C_{2}R_{1}R_{3}+C_{1}C_{2}R_{2}R_{3}
+\backslash
+right)s^{2}+
+\backslash
+left(C_{1}R_{3}+C_{2}R_{3}
+\backslash
+right)s+1}{C_{1}C_{2}C_{3}R_{1}R_{2}R_{3}s^{3}+
+\backslash
+left(C_{1}C_{2}R_{1}R_{3}+C_{1}C_{2}R_{2}R_{3}+C_{1}C_{3}R_{1}R_{3}+C_{2}C_{3}R_
+{1}R_{2}+C_{2}C_{3}R_{1}R_{3}
+\backslash
+right)s^{2}+
+\backslash
+left(C_{2}R_{1}+C_{1}R_{3}+C_{2}R_{2}+C_{3}R_{1}+C_{2}R_{3}
+\backslash
+right)s+1}$
+\end_layout
+
 \end_inset
 
 
@@ -1025,13 +1055,13 @@ Lo primero que se dedició probar fue si el circuito efectivamente anulaba
  (atenuaba hasta casi anular) la frecuencia solicitada.
  Para eso se eligió una entrada senoidal (la entrada que mejor aproxima
  a una única frecuencia) de 10.8 kHz.
- Se observó que la salida era casi nula, detectándose una amplitud de 8.0
- mV pico a pico contra una entrada de 8.62V pico a pico, lo cual se traduce
+ Se observó que la salida era casi nula, detectándose una amplitud de 66
+ mV pico a pico contra una entrada de 17.7V pico a pico, lo cual se traduce
  a una relación entrada salida de 
-\begin_inset Formula $\frac{V_{out}}{V_{in}}\text{=0.0009}$
+\begin_inset Formula $\frac{V_{out}}{V_{in}}\text{=0.0037}$
 \end_inset
 
-, por lo que la salida representaría el 0.09% de la entrada, un valor muy
+, por lo que la salida representaría el 0.3% de la entrada, un valor muy
  cercano al 0% que se esperaba lograr.
  
 \end_layout
@@ -1040,8 +1070,8 @@ Lo primero que se dedició probar fue si el circuito efectivamente anulaba
 Cabe destacar que con amplitudes de este orden, la medición de la salida
  resulta ya comparable con el ruido inherente del osciloscopio.
  De hecho, el instrumento en este caso ni siquiera permitió obtener un valor
- para el desfasaje entre entrada y salida, debido a que la salida ni siquiera
- tiene una forma sinusoidal apreciable.
+ para el desfasaje entre entrada y salida, debido a que la salida no tiene
+ una forma sinusoidal apreciable.
  La información que sí podemos considerar representativa es, entonces, que
  la salida está tan atenuada que no se puede medir con este instrumento
  de manera precisa.
@@ -1052,12 +1082,12 @@ Cabe destacar que con amplitudes de este orden, la medición de la salida
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename fotos/frecuencia de corte v2.png
+	filename fotos/10K8.png
 	scale 30
 
 \end_inset
@@ -1086,17 +1116,25 @@ Salida y entrada en frecuencia de corte f = 10.8 kHz experimental
 Luego, se procedió a verificar que efectivamente se anulara la frecuencia
  de corte pero sus alrededores no estuvieran tan atenuados como esa frecuencia
  en particular.
- Las mediciones del osciloscopio para frecuencias de aproximadamente 0.1kHz
- de diferencia con la frecuencia de corte muestran un 
+ Las mediciones del osciloscopio para frecuencias con 0.1kHz de diferencia
+ con la frecuencia de corte muestran un 
 \begin_inset Formula $V_{in}$
 \end_inset
 
- de aproximadamente 8.6V, mientras que la salida fue de aproximadamente 50mV.
- La atenuación correspondiente a estos valores ronda el 0.5%, que es significativ
-a pero menor a la de la frecuencia de corte (que es lo que se esperaba observar).
+ de aproximadamente 17.17V, mientras que la salida fue de aproximadamente
+ 80mV.
+ La atenuación correspondiente a estos valores ronda el 0.0047%, que es significa
+tiva pero menor a la de la frecuencia de corte (que es lo que se esperaba
+ observar).
  A su vez, se observa en los gráficos que la señal de salida ya adquiere
  una forma senoidal en estas frecuencias, de lo cual podemos suponer que
  el error es menos significativo en esta medición que en la anterior.
+ La información más valiosa que obtenemos de esto es que la máxima atenuación
+ es para 
+\begin_inset Formula $10.8kHz$
+\end_inset
+
+, que era el objetivo principal del diseño.
 \end_layout
 
 \begin_layout Standard
@@ -1104,19 +1142,19 @@ a pero menor a la de la frecuencia de corte (que es lo que se esperaba observar)
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align left
 \begin_inset Graphics
-	filename fotos/Izquierda fc.png
+	filename fotos/10K7.png
 	scale 20
 
 \end_inset
 
 
 \begin_inset Graphics
-	filename fotos/Derecha fc.png
+	filename fotos/10K9.png
 	scale 20
 
 \end_inset
@@ -1150,7 +1188,8 @@ Habiendo verificado el valor de la frecuencia de corte, se procedió a obtener
  fija y registrando la amplitud de la sinusoidal de salida.
  La tabla de valores tomados se muestran en el anexo.
  De estos datos se desprende el siguiente gráfico aproximado del bode del
- circuito, que luego se contrasta con el teórico.
+ circuito, que luego se contrasta con el teórico y con la simulación en
+ LtSpice.
 \end_layout
 
 \begin_layout Standard
@@ -1158,13 +1197,13 @@ Habiendo verificado el valor de la frecuencia de corte, se procedió a obtener
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename fotos/bode_Exp.png
-	scale 30
+	filename fotos/bode diagram cheto adentro.png
+	scale 40
 
 \end_inset
 
@@ -1172,10 +1211,11 @@ status collapsed
 \end_layout
 
 \begin_layout Plain Layout
+\align center
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Bode experimental
+Bodes experimental (verde), simulado (rojo) y teórico (azul).
 \end_layout
 
 \end_inset
@@ -1189,46 +1229,12 @@ Bode experimental
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float figure
-placement H
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename fotos/bode_Exp_ampliado.png
-	scale 30
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Bode experimental, frecuencia de corte coincidente
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Se observa que la frecuencia de corte experimental coincide con la solicitada,
- se observa también de los gráficos experimentales que el bode del circuito
- cumple con la forma propia de un notch estándar y verifica lo calculado
- teóricamente.
- 
+Se observa que los tres diagramas coinciden en la mayor parte del espectro
+ de frecuencia.
+ Las diferencias principales aparecen alrededor de la frecuencia de corte,
+ donde teóricamente se observa una asíntota y experimentalmente es imposible
+ medir exactamente amplitud 0 debido al ruido, con lo cual hay un valor
+ mínimo.
 \end_layout
 
 \begin_layout Paragraph

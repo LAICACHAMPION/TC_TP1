@@ -107,7 +107,7 @@
 \begin_body
 
 \begin_layout Section
-Filtro notch pasivo (R)
+Filtro notch pasivo
 \end_layout
 
 \begin_layout Subsection
@@ -120,9 +120,11 @@ Se busca diseñar un filtro notch de frecuencia de corte 2.7·4 kHz = 10.8 kHz
 \end_layout
 
 \begin_layout Standard
+\align center
 \begin_inset Graphics
 	filename fotos/Filtro del tp.png
 	scale 60
+	rotateOrigin center
 
 \end_inset
 
@@ -136,9 +138,11 @@ Para ello, primero se busca obtener la función transferencia para el circuito
 \end_layout
 
 \begin_layout Standard
+\align center
 \begin_inset Graphics
 	filename fotos/Filtro del tp con corrientes.png
 	scale 60
+	rotateOrigin center
 
 \end_inset
 
@@ -354,7 +358,7 @@ status open
 
 
 \backslash
-[H(s)=
+center{$$H(s)=
 \backslash
 frac{{
 \backslash
@@ -382,9 +386,7 @@ mathrm{C_3}
 \backslash
 mathrm{R_3}
 \backslash
-, s + 1}
-\backslash
-]
+, s + 1}$$}
 \end_layout
 
 \end_inset
@@ -438,7 +440,7 @@ status open
 
 \begin_layout Plain Layout
 
-f=$
+$f=
 \backslash
 frac{1}{{2}
 \backslash
@@ -499,7 +501,7 @@ El bode resultante de la función de transferencia del circuito es:
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -623,23 +625,57 @@ por la condición dicha anteriormente.
 \begin_layout Standard
 Con estos valores fijados, podemos realizar un análisis de la respuesta
  en frecuencia y la respuesta al impulso y al escalón en tiempo mediante
- antitransformadas de laplace.
- Efectivamente, si y(t) es la salida Vo y x(t) es la entrada Vi en función
- del tiempo, con sus respectivas transformadas de Laplace Y(s) y X(s), entonces
- dada la relación
+ antitransformadas de Laplace.
+ Efectivamente, si 
+\begin_inset Formula $y(t)$
+\end_inset
+
+ es la salida 
+\begin_inset Formula $V_{o}$
+\end_inset
+
+ y 
+\begin_inset Formula $x(t)$
+\end_inset
+
+ es la entrada 
+\begin_inset Formula $V_{i}$
+\end_inset
+
+ en función del tiempo, con sus respectivas transformadas de Laplace 
+\begin_inset Formula $Y(s)$
+\end_inset
+
+ y 
+\begin_inset Formula $X(s)$
+\end_inset
+
+, entonces dada la relación
 \begin_inset Formula $Y(s)=X(s)\cdot H(s)$
 \end_inset
 
-,donde X(s) =1 con x(t) =
-\begin_inset Formula $\delta(t)$
+,donde 
+\begin_inset Formula $X(s)=1$
 \end_inset
 
- para la respuesta impulsiva o X(s) = 1/s con x(t)=
-\begin_inset Formula $u(t)$
+ con 
+\begin_inset Formula $x(t)=\delta(t)$
 \end_inset
 
- para la respuesta al escalón, se puede obtener y(t) como y(t)=
-\begin_inset Formula $\mathcal{L}^{-1}\{H(s)\cdot X(s)\}(t)$
+ para la respuesta impulsiva o 
+\begin_inset Formula $X(s)=\frac{1}{s}$
+\end_inset
+
+ con 
+\begin_inset Formula $x(t)=u(t)$
+\end_inset
+
+ para la respuesta al escalón, se puede obtener 
+\begin_inset Formula $y(t)$
+\end_inset
+
+ como 
+\begin_inset Formula $y(t)=\mathcal{L}^{-1}\{H(s)\cdot X(s)\}(t)$
 \end_inset
 
 .
@@ -757,7 +793,7 @@ right)}{c_{3}
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -856,7 +892,7 @@ frac{2
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -881,10 +917,6 @@ Respuesta al escalón teórica
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
@@ -905,7 +937,7 @@ Dada la disponibilidad de componentes en el pañol y buscando minimizar la
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -927,10 +959,6 @@ Diseño de la placa
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -983,8 +1011,8 @@ Mediciones experimentales
 \end_layout
 
 \begin_layout Standard
-Para todos los gráficos que se presenten a continuación, la entrada del
- estará representada con color amarillo y la salida con color verde.
+Para todos los gráficos que se presenten a continuación, la entrada estará
+ representada con color amarillo y la salida con color verde.
  
 \end_layout
 
@@ -993,33 +1021,30 @@ Análisis de Bode:
 \end_layout
 
 \begin_layout Standard
-Lo primero que se dedició probar fue si el circuito efectivamente anulaba(atenua
-ba hasta casi anular) la frecuencia solicitada.
- Para eso se eligió una entrada senoidal (una única frecuencia) de 10.8 kHz.
- Se observó que la salida era casi nula, detectándose una amplitud de 310
- mV pico a pico contra una entrada de 8.75 V pico a pico, lo cual se traduce
+Lo primero que se dedició probar fue si el circuito efectivamente anulaba
+ (atenuaba hasta casi anular) la frecuencia solicitada.
+ Para eso se eligió una entrada senoidal (la entrada que mejor aproxima
+ a una única frecuencia) de 10.8 kHz.
+ Se observó que la salida era casi nula, detectándose una amplitud de 8.0
+ mV pico a pico contra una entrada de 8.62V pico a pico, lo cual se traduce
  a una relación entrada salida de 
-\begin_inset Formula $\frac{V_{out}}{V_{in}}\text{=0.0354}$
+\begin_inset Formula $\frac{V_{out}}{V_{in}}\text{=0.0009}$
 \end_inset
 
-, por lo que la salida representaría el 3% de la entrada, un valor muy cercano
- al 0% que se esperaba lograr.
+, por lo que la salida representaría el 0.09% de la entrada, un valor muy
+ cercano al 0% que se esperaba lograr.
  
 \end_layout
 
 \begin_layout Standard
-Aquí es donde cabe destacar que el ruido de medición para la salida ya comienza
- a ser significativo, pudiendo alterar el valor de la amplitud, aumentándola.
- El gráfico en este caso resulta mucho más representativo de la señal de
- salida, ya que en los promedios que se tomaron para la salida para proyectar
- la imagen (que terminan cancelando el ruido) se nota claramente cómo la
- señal queda prácticamente anulada, con una amplitud muchísimo menor a los
- 310 mV que muestra numéricamente el osciloscopio .
- Es por esto que debería considerarse también una 
-\begin_inset Formula $\frac{V_{out}}{V_{in}}\text{<<0.0354}$
-\end_inset
-
-
+Cabe destacar que con amplitudes de este orden, la medición de la salida
+ resulta ya comparable con el ruido inherente del osciloscopio.
+ De hecho, el instrumento en este caso ni siquiera permitió obtener un valor
+ para el desfasaje entre entrada y salida, debido a que la salida ni siquiera
+ tiene una forma sinusoidal apreciable.
+ La información que sí podemos considerar representativa es, entonces, que
+ la salida está tan atenuada que no se puede medir con este instrumento
+ de manera precisa.
 \end_layout
 
 \begin_layout Standard
@@ -1027,12 +1052,12 @@ Aquí es donde cabe destacar que el ruido de medición para la salida ya comienz
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename fotos/Frecuencia de corte exp.png
+	filename fotos/frecuencia de corte v2.png
 	scale 30
 
 \end_inset
@@ -1052,10 +1077,6 @@ Salida y entrada en frecuencia de corte f = 10.8 kHz experimental
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
@@ -1065,16 +1086,17 @@ Salida y entrada en frecuencia de corte f = 10.8 kHz experimental
 Luego, se procedió a verificar que efectivamente se anulara la frecuencia
  de corte pero sus alrededores no estuvieran tan atenuados como esa frecuencia
  en particular.
- Las mediciones del osciloscopio para frecuencias de 0.2 kHz de diferencia
- con la frecuencia de corte muestran un Vin de aproximadamente 8.6 V mientras
- que la salida fue de aproximadamente 50mV.
- Dado la forma del gráfico, se puede apreciar como el ruido ya no entra
- en juego al afectar a las mediciones debido al tamaño de la onda de salida
- y es por eso que si bien el valor obtenido del osciloscopio es mucho menor
- y daría una relación entrada salida de un orden de magnitud de diferencia,
- en el gráfico se muestra cómo la amplitud de las sinusoidales de salida
- son claramente superiores a las de la frecuencia de corte.
- De esta manera se deduce que el filtro notch funciona correctamente.
+ Las mediciones del osciloscopio para frecuencias de aproximadamente 0.1kHz
+ de diferencia con la frecuencia de corte muestran un 
+\begin_inset Formula $V_{in}$
+\end_inset
+
+ de aproximadamente 8.6V, mientras que la salida fue de aproximadamente 50mV.
+ La atenuación correspondiente a estos valores ronda el 0.5%, que es significativ
+a pero menor a la de la frecuencia de corte (que es lo que se esperaba observar).
+ A su vez, se observa en los gráficos que la señal de salida ya adquiere
+ una forma senoidal en estas frecuencias, de lo cual podemos suponer que
+ el error es menos significativo en esta medición que en la anterior.
 \end_layout
 
 \begin_layout Standard
@@ -1082,7 +1104,7 @@ Luego, se procedió a verificar que efectivamente se anulara la frecuencia
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align left
@@ -1115,17 +1137,14 @@ Salida y entrada en alrededores de la frecuencia de corte experimentalmente.
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
-Luego, se procedió a realizar un análisis de bode del circuito.
+Habiendo verificado el valor de la frecuencia de corte, se procedió a obtener
+ los datos para realizar un diagrama de Bode para este circuito.
  Para eso se analizó la respuesta a sinusoidales de distintas frecuencias,
  cambiando manualmente desde el generador la frecuencia de estas a una amplitud
  fija y registrando la amplitud de la sinusoidal de salida.
@@ -1139,7 +1158,7 @@ Luego, se procedió a realizar un análisis de bode del circuito.
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -1164,10 +1183,6 @@ Bode experimental
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
@@ -1178,7 +1193,7 @@ Bode experimental
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -1200,10 +1215,6 @@ Bode experimental, frecuencia de corte coincidente
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -1236,7 +1247,7 @@ Se presenta el gráfico tomado con el osciloscopio de la entrada al escalón
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center

@@ -107,7 +107,42 @@
 \begin_body
 
 \begin_layout Section
-Conclusion
+Conclusión
+\end_layout
+
+\begin_layout Standard
+Se armaron dos filtros pasivos: un notch de segundo orden con 
+\begin_inset Formula $f_{0}\text{=10.8kHz y un pasabajos de primer orden con frecuencia de corte en 64kHz}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+En ambos filtros, el hecho de que los valores de las resistencias eran comparabl
+es con los 
+\begin_inset Formula $50\Omega$
+\end_inset
+
+del generador de funciones provocó problemas a la hora de observar la respuesta
+ al escalón, en la cual se observaba un 
+\emph on
+rise time
+\emph default
+ del orden de los microsegundos, lo cual no es adjudicable simplemente al
+ osciloscopio o a las puntas.
+ En el futuro, se procurará elegir resistores con valores del orden de los
+ 
+\begin_inset Formula $k\Omega$
+\end_inset
+
+, con el fin de reducir este efecto (pero a su vez teniendo en cuenta que
+ tampoco sería recomendable acercarse al 
+\begin_inset Formula $1M\Omega$
+\end_inset
+
+ del osciloscopio).
 \end_layout
 
 \end_body
