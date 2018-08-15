@@ -46,11 +46,22 @@ s = tf('s');
 H = (c_3^2*r_3^2*s^2 + 1)/(c_3^2*r_3^2*s^2 + 4*c_3*r_3*s + 1);
 opt = bodeoptions();
 opt.FreqUnits = 'Hz';
-bode(H, opt);
-figure();
-step(H);
-figure();
-impulse(H);
+DatosSimulados=csvread('simulacion.csv');
+DatosMedidos=csvread('medido.csv');
+opt.PhaseVisible='off';
+[mag,phase,wout]=bode(H, opt);
+mag=squeeze(mag);
+mag=20*log10(mag);
+phase=squeeze(phase);
+wout=squeeze(wout);
+semilogx(DatosSimulados(:,1),DatosSimulados(:,2),'r');
+hold on;
+semilogx(wout/(2*pi),mag,'b');
+semilogx(DatosMedidos(:,1).*1000,DatosMedidos(:,5),'g');
+%figure();
+%step(H);
+%figure();
+%impulse(H);
 
 
 
