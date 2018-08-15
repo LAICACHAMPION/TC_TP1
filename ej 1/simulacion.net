@@ -1,0 +1,11 @@
+* C:\Users\rochi\Google Drive\Materias\Teoría de circuitos\TPs\TP1\TC_TP1\ej 1\simulacion.asc
+R1 N002 N001 360
+R2 N003 N002 360
+R3 N004 0 180
+C3 N002 0 82n
+C2 N003 N004 41n
+C1 N004 N001 41n
+V1 N001 0 SINE(0 1 200) AC 1
+.ac dec   100 1 10Meg
+.backanno
+.end

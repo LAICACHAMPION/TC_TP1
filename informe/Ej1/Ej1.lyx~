@@ -552,7 +552,15 @@ Lógicamente, de esta forma se deduce que el circuito resultante es de orden
 \uwave off
 \noun off
 \color none
-C1 y C2
+
+\begin_inset Formula $C_{1}$
+\end_inset
+
+ y 
+\begin_inset Formula $C_{2}$
+\end_inset
+
+
 \family default
 \series default
 \shape default
@@ -576,7 +584,15 @@ C1 y C2
 \uwave off
 \noun off
 \color none
-R1 y R2.
+
+\begin_inset Formula $R_{1}$
+\end_inset
+
+ y 
+\begin_inset Formula $R_{2}$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
