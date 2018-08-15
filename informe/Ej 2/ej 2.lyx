@@ -112,8 +112,22 @@ Filtro pasabajos pasivo
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
 \begin_inset ERT
 status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
 
 \begin_layout Plain Layout
 
@@ -146,7 +160,7 @@ yTerminalBottom{0}
 \backslash
 def
 \backslash
-yL{1.5}
+yR{1.5}
 \end_layout
 
 \begin_layout Plain Layout
@@ -164,7 +178,7 @@ xL{1}
 \backslash
 def
 \backslash
-xR{1.75}
+xR{1}
 \end_layout
 
 \begin_layout Plain Layout
@@ -173,7 +187,7 @@ xR{1.75}
 \backslash
 def
 \backslash
-xC{2.25}
+xC{1.5}
 \end_layout
 
 \begin_layout Plain Layout
@@ -182,7 +196,7 @@ xC{2.25}
 \backslash
 def
 \backslash
-xPortRight{3}
+xPortRight{2.25}
 \end_layout
 
 \begin_layout Plain Layout
@@ -198,16 +212,7 @@ draw                               (
 \backslash
 xPortLeft,
 \backslash
-yL)
-\end_layout
-
-\begin_layout Plain Layout
-
-            to[L=$L$, o-]               (
-\backslash
-xL, 
-\backslash
-yL)
+yR)
 \end_layout
 
 \begin_layout Plain Layout
@@ -216,7 +221,7 @@ yL)
 \backslash
 xR, 
 \backslash
-yL)
+yR)
 \end_layout
 
 \begin_layout Plain Layout
@@ -225,7 +230,7 @@ yL)
 \backslash
 xC,
 \backslash
-yL)
+yR)
 \end_layout
 
 \begin_layout Plain Layout
@@ -248,11 +253,11 @@ yTerminalBottom)
 
 \begin_layout Plain Layout
 
-            to[open,v^>=$v_1(t)$,o-o]   (
+            to[open,v^>=$V_g(t)$,o-o]   (
 \backslash
 xPortLeft,
 \backslash
-yL);
+yR);
 \end_layout
 
 \begin_layout Plain Layout
@@ -268,7 +273,7 @@ draw                               (
 \backslash
 xC,
 \backslash
-yL)
+yR)
 \end_layout
 
 \begin_layout Plain Layout
@@ -277,12 +282,12 @@ yL)
 \backslash
 xPortRight,
 \backslash
-yL)
+yR)
 \end_layout
 
 \begin_layout Plain Layout
 
-            to[open,v^=$v_2(t)$,o-o]    (
+            to[open,v^=$V_C(t)$,o-o]    (
 \backslash
 xPortRight,
 \backslash
@@ -305,6 +310,30 @@ yTerminalBottom);
 end{circuitikz}
 \end_layout
 
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Filtro pasabajos pasivo con fuente ideal
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \end_inset
 
 
@@ -325,9 +354,9 @@ textbf{Funcion transferencia filtro pasabajos RC:}
 
  
 \begin_inset Formula 
-\[
-H(s)=\frac{\frac{1}{sC}}{\frac{1}{sC}+R}=\frac{1}{sCR+1}=\frac{1}{\frac{s}{\frac{1}{RC}}+1}
-\]
+\begin{equation}
+H(s)=\frac{\frac{1}{sC}}{\frac{1}{sC}+R}=\frac{1}{sCR+1}=\frac{1}{\frac{s}{\frac{1}{RC}}+1}\label{eq:transferencia_RC}
+\end{equation}
 
 \end_inset
 
@@ -454,6 +483,17 @@ status open
 
 \end_inset
 
+ de altura 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$V_g$
+\end_layout
+
+\end_inset
+
  es 
 \end_layout
 
@@ -466,34 +506,6 @@ V_{C}=V_{g}(1-e^{-\frac{t}{RC}})
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-siendo 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-$V_g$
-\end_layout
-
-\end_inset
-
- la altura del escal
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-'on
-\end_layout
-
-\end_inset
-
-.
 \end_layout
 
 \begin_layout Standard
@@ -533,13 +545,153 @@ funci
 
 \begin_layout Standard
 \begin_inset Formula 
-\[
-H(s)=\frac{1}{s}
-\]
+\begin{equation}
+H(s)=\frac{1}{s}\label{eq:transferencia_integrador}
+\end{equation}
 
 \end_inset
 
- 
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+'Esta
+\end_layout
+
+\end_inset
+
+ no coincide con la 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+funci
+\backslash
+'on
+\end_layout
+
+\end_inset
+
+ transferencia del filtro pasabajos (ecuaci
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+'o
+\end_layout
+
+\end_inset
+
+n 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:transferencia_RC"
+
+\end_inset
+
+), ya que tiene un polo en el origen y no en la parte negativa del eje real.
+ Sin embargo, para frecuencias mucho mayores a 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$f_0$
+\end_layout
+
+\end_inset
+
+ la funci
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+'o
+\end_layout
+
+\end_inset
+
+n del filtro tiende a la de un integrador que adem
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+'a
+\end_layout
+
+\end_inset
+
+s divide por 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$
+\backslash
+uptau$:
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+[ f 
+\backslash
+gg 
+\backslash
+frac{1}{RC} 
+\backslash
+Rightarrow {2
+\backslash
+pi f RC} 
+\backslash
+gg 1 
+\backslash
+Rightarrow H(s) = 
+\backslash
+frac{1}{sRC +1} 
+\backslash
+approx 
+\backslash
+frac{1}{RC}
+\backslash
+cdot 
+\backslash
+frac{1}{s}
+\backslash
+]
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -582,7 +734,18 @@ se
 
 \end_inset
 
- de entrada (cuadrada 32KHz, 
+ de entrada (cuadrada de frecuencia 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$f_0$
+\end_layout
+
+\end_inset
+
+ 
 \begin_inset ERT
 status open
 
@@ -1028,6 +1191,23 @@ SIMULACIONES Y MEDICIONES
 \end_layout
 
 \begin_layout Standard
+Se midi
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+'o
+\end_layout
+
+\end_inset
+
+ la respuesta en frecuencia entre los 
+\end_layout
+
+\begin_layout Standard
 \align center
 \begin_inset Float figure
 placement H
@@ -1085,7 +1265,7 @@ textbf{Entrada a 32KHz:}
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -1134,7 +1314,7 @@ n respuesta del filtro RC a 32KHz
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -1178,6 +1358,254 @@ n respuesta del filtro RC a 32KHz
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{circuitikz}[scale=2]
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+def
+\backslash
+xPortLeft{0}
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+def
+\backslash
+yTerminalBottom{0}
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+def
+\backslash
+yL{1.5}
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+def
+\backslash
+xL{1}
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+def
+\backslash
+xR{1.75}
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+def
+\backslash
+xC{2.25}
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+def
+\backslash
+xPortRight{3}
+\end_layout
+
+\begin_layout Plain Layout
+
+    % left loop
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+draw                               (
+\backslash
+xPortLeft,
+\backslash
+yL)
+\end_layout
+
+\begin_layout Plain Layout
+
+            to[R=$r_i$, o-]               (
+\backslash
+xL, 
+\backslash
+yL)
+\end_layout
+
+\begin_layout Plain Layout
+
+            to[R=$R$]                   (
+\backslash
+xR, 
+\backslash
+yL)
+\end_layout
+
+\begin_layout Plain Layout
+
+            to[short]                   (
+\backslash
+xC,
+\backslash
+yL)
+\end_layout
+
+\begin_layout Plain Layout
+
+            to[C, l_=$C$,*-*]           (
+\backslash
+xC,
+\backslash
+yTerminalBottom)
+\end_layout
+
+\begin_layout Plain Layout
+
+            to[short,i=$i(t)$]          (
+\backslash
+xPortLeft,
+\backslash
+yTerminalBottom)
+\end_layout
+
+\begin_layout Plain Layout
+
+            to[open,v^>=$V_g(t)$,o-o]   (
+\backslash
+xPortLeft,
+\backslash
+yL);
+\end_layout
+
+\begin_layout Plain Layout
+
+    % right branch
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+draw                               (
+\backslash
+xC,
+\backslash
+yL)
+\end_layout
+
+\begin_layout Plain Layout
+
+            to[short]                   (
+\backslash
+xPortRight,
+\backslash
+yL)
+\end_layout
+
+\begin_layout Plain Layout
+
+            to[open,v^=$V_C(t)$,o-o]    (
+\backslash
+xPortRight,
+\backslash
+yTerminalBottom)
+\end_layout
+
+\begin_layout Plain Layout
+
+            to[short]                   (
+\backslash
+xC,
+\backslash
+yTerminalBottom);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{circuitikz}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Filtro pasabajos pasivo con fuente real de resistencia interna 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$r_i$
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 La 
 \begin_inset ERT
 status open
@@ -1198,7 +1626,7 @@ status open
 
 \begin_layout Plain Layout
 
-$500
+$R = 500
 \backslash
 Omega$
 \end_layout
@@ -1211,7 +1639,7 @@ status open
 
 \begin_layout Plain Layout
 
-$50
+$r_i = 50
 \backslash
 Omega$
 \end_layout
@@ -1238,7 +1666,7 @@ status open
 
 \begin_layout Plain Layout
 
-$V_R = V_g - V_C$
+$V_{R_{ideal}} = V_g - V_C = 5V - V_C$
 \end_layout
 
 \end_inset
@@ -1303,7 +1731,7 @@ status open
 
 
 \backslash
-[V_{ri} = V_R
+[V_{ri} = V_{R_{ideal}}
 \backslash
 frac{r_i}{R+ri} = (5V - V_C)
 \backslash
@@ -1346,7 +1774,11 @@ $V_{in}$
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $V_{in}=5V-V_{ri}=0.91\cdot5V\ +0.09\cdot V_{C}$
+\begin_inset Formula 
+\[
+V_{in}=5V-V_{ri}=0.91\cdot5V+0.09\cdot V_{C}
+\]
+
 \end_inset
 
 
@@ -1678,89 +2110,6 @@ USO COMO INTEGRADOR
 \end_layout
 
 \begin_layout Standard
-La funcion de transferencia de este circuito no corresponde con la de un
- integrador, ya que tiene un polo en el semiplano negativo y no en el origen.
- Sin embargo, para frecuencias mucho mayores a 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-$f_0$
-\end_layout
-
-\end_inset
-
- su comportamiento tiende al de un integrador que adem
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-'a
-\end_layout
-
-\end_inset
-
-s divide por 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-$
-\backslash
-uptau$:
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-[ f 
-\backslash
-gg 
-\backslash
-frac{1}{RC} 
-\backslash
-Rightarrow {2
-\backslash
-pi f RC} 
-\backslash
-gg 1 
-\backslash
-Rightarrow H(s) = 
-\backslash
-frac{1}{sRC +1} 
-\backslash
-approx 
-\backslash
-frac{1}{RC}
-\backslash
-cdot 
-\backslash
-frac{1}{s}
-\backslash
-]
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 Esto coincide con el caso particular del filtro a 
 \begin_inset ERT
 status open
@@ -1850,6 +2199,10 @@ m
 'as que se cumpla la desigualdad ya mencionada, el filtro solo puede usarse
  como integrador de funciones con valor medio cero.
  En caso contrario, no se trataria de un sistema estable.
+\end_layout
+
+\begin_layout Plain Layout
+
 \end_layout
 
 \end_inset
