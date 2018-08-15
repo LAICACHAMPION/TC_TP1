@@ -194,7 +194,7 @@ De los valores de
 \begin_inset Formula $\omega$
 \end_inset
 
-es que se puede seguir caracterizando al filtro, generando subcategorías
+ es que se puede seguir caracterizando al filtro, generando subcategorías
  dentro de la categoría notch:
 \end_layout
 
@@ -211,7 +211,7 @@ Si
 \begin_inset Formula $\omega_{z}>\omega_{p}$
 \end_inset
 
-el filtro se llama notch pasabajos.
+ el filtro se llama notch pasabajos.
 \end_layout
 
 \begin_layout Itemize
@@ -219,10 +219,22 @@ Si
 \begin_inset Formula $\omega_{z}<\omega_{p}$
 \end_inset
 
-el filtro se llama notch pasaltos.
+ el filtro se llama notch pasaltos.
 \end_layout
 
 \begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+par 
+\end_layout
+
+\end_inset
+
 En este trabajo se analizarán y confeccionarán dos filtros específicos,
  uno de tipo notch y uno de tipo pasa-bajos.
 \end_layout
@@ -233,7 +245,7 @@ Al tener que confeccionar las placas para los filtros, nos encontramos con
  a la venta.
  Esto en general no permite obtener un componente con una capacitancia o
  resistencia exactamente igual al valor requerido teóricamente al realizar
- el análisis del circuito y encontrar los requisitos para la frecuencia
+ el análisis del circuito y complir con los requisitos para la frecuencia
  de corte especificada.
  Como solución a este problema, se propone la realización de un programa
  que encuentre aquellos dos valores de resistencia y capacitancia comerciales

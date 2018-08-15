@@ -148,7 +148,7 @@ vspace{1mm}
 \end_layout
 
 \begin_layout Standard
-a) Filtro pasa-bajos: Elimina o atenúa notablemente las frecuencias 
+a) Filtro pasa-bajos: Elimina o atenúa las frecuencias 
 \begin_inset Quotes eld
 \end_inset
 
@@ -160,7 +160,7 @@ altas
 \end_layout
 
 \begin_layout Standard
-b) Filtro pasa-altos: Elimina o atenúa notablemente las frecuencias 
+b) Filtro pasa-altos: Elimina o atenúa las frecuencias 
 \begin_inset Quotes eld
 \end_inset
 
@@ -194,7 +194,7 @@ De los valores de
 \begin_inset Formula $\omega$
 \end_inset
 
-es que se puede seguir caracterizando al filtro, generando subcategorías
+ es que se puede seguir caracterizando al filtro, generando subcategorías
  dentro de la categoría notch:
 \end_layout
 
