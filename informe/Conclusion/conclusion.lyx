@@ -120,6 +120,10 @@ Se armaron dos filtros pasivos: un notch de segundo orden con
 \end_layout
 
 \begin_layout Standard
+Los filtros funcionaron dentro de lo esperado cumpliendo con consigna.
+\end_layout
+
+\begin_layout Standard
 En ambos filtros, el hecho de que los valores de las resistencias eran comparabl
 es con los 
 \begin_inset Formula $50\Omega$
@@ -132,8 +136,8 @@ rise time
 \emph default
  del orden de los microsegundos, lo cual no es adjudicable simplemente al
  osciloscopio o a las puntas.
- En el futuro, se procurará elegir resistores con valores del orden de los
- 
+ En el futuro, se procurará elegir una impedancia de entrada del orden de
+ los 
 \begin_inset Formula $k\Omega$
 \end_inset
 
