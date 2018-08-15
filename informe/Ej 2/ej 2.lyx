@@ -508,24 +508,6 @@ V_{C}=V_{g}(1-e^{-\frac{t}{RC}})
 
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-textbf{Funci
-\backslash
-'on transferencia integrador}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Subsection
 ANALISIS ESPECTRAL
 \end_layout
@@ -621,7 +603,7 @@ status open
 
 \begin_layout Plain Layout
 
-$5V_{pp}$  de frecuencia $f_0 = 32KHz$ 
+$10V_{pp}$  de frecuencia $f_0 = 32KHz$ 
 \end_layout
 
 \end_inset
@@ -1053,7 +1035,7 @@ status open
 
 \end_inset
 
- la respuesta en frecuencia entre los 
+ la respuesta en frecuencia del circuito.
 \end_layout
 
 \begin_layout Standard
@@ -1927,7 +1909,9 @@ status open
 
 \begin_layout Plain Layout
 
-$t<<
+$t
+\backslash
+ll
 \backslash
 uptau$
 \end_layout
@@ -2147,17 +2131,6 @@ mu s$
 
 \end_inset
 
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-chequear el valor
-\end_layout
-
-\end_inset
-
-.
  Por el contrario, en el caso en que 
 \begin_inset ERT
 status open
@@ -2217,9 +2190,9 @@ m
 
 \begin_layout Plain Layout
 
-Dado que el integrador divide por 
+Dado que el integrador divide por $
 \backslash
-uptau, se debería utilizar un multiplicador fácilmente implementable con
+uptau$, se debería utilizar un multiplicador fácilmente implementable con
  amplificadores operacionales para obtener la señal integrada en la proporción
  correcta.
 \end_layout
