@@ -1,9 +1,9 @@
-f0 = 4 * 8000;   %Frecuencia de la senial cuadrada
-A = 10; %amplitud pico a pico de la senial cuadrada
+f0 = 4 * 8000;   %Frecuencia de la señal cuadrada
+A = 10; %amplitud pico a pico de la señal cuadrada
 
-N  = 8000; %cantidad de armonicos que se muestran
+N  = 800; %cantidad de armonicos que se muestran
 
-filtro_on = false;   %true: muestra armonicos de salida, false: muestra armonicos de entrada
+filtro_on = true;   %true: muestra armonicos de salida, false: muestra armonicos de entrada
 
 armonico = 1 : N;
 armonico  = armonico*f0;
@@ -52,7 +52,11 @@ for n = 1:N
    if n==N
        plot(t,x, 'Linewidth', 2, 'Color', 'black');
    else
-%       plot(t,x, 'Linewidth', 0.5, 'Color', 'red');
+       plot(t,x, 'Linewidth', 0.5, 'Color', 'red');
    end;
    hold on;
 end;
+
+xlabel('tiempo(s)');
+ylabel('Amplitud(V)');
+

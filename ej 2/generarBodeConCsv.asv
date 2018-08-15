@@ -25,4 +25,4 @@ grid on;
 xlabel('Frecuencia (KHz)');
 ylabel('Fase');
 
-set(gca,'ytick',-90:45:0);
+set(gca,'ytick',-90:45:0);;
