@@ -5,42 +5,6 @@
 \save_transient_properties true
 \origin unavailable
 \textclass article
-\begin_preamble
-\usepackage{makecell}		%Para emprolijar celdas de tablas
-\usepackage{amsmath}
-\usepackage{upgreek}		%puedo usar \uptau que es como \tau pero con mas rulito
-\usepackage{steinmetz}
-\usepackage{mathtools}
-\usepackage{placeins}
-\usepackage[textwidth=14cm]{geometry}	%texto ocupa mas ancho de pagina
-\usepackage{xcolor}		%se usa en \code
-
-\usepackage[american]{circuitikz}
-
-\usepackage[parfill]{parskip}		%pone espacio entre parrafos
-\setlength{\parindent}{10pt}		%cuanta sangria al principio de un parrafo
-\usepackage{indentfirst}		%pone sangria al primer parrafo de una seccion
-
-
-% Swap the definition of \abs* and \norm*, so that \abs
-% and \norm resizes the size of the brackets, and the 
-% starred version does not.
-\DeclarePairedDelimiter\abs{\lvert}{\rvert} %
-\makeatletter	%magia de categoria de caracteres en Tex, ignorar
-\let\oldabs\abs
-\def\abs{\@ifstar{\oldabs}{\oldabs*}}
-\let\oldnorm\norm
-\def\norm{\@ifstar{\oldnorm}{\oldnorm*}}
-\makeatother	%magia de categoria de caracteres en Tex, ignorar
-
-%Definicion comando \parsum: hace re piola el simbolo de la suma en paralelo
-\newcommand{\parsum}{\mathbin{\!/\mkern-5mu/\!}} 
-
-%Definicion comando \code: poen el texto en fuente monoespaciada con fondo gris 
-%al estilo del codigo de stack overflow
-\definecolor{light-gray}{gray}{0.95} 
-\newcommand{\code}[1]{\colorbox{light-gray}{\texttt{#1}}}
-\end_preamble
 \use_default_options true
 \maintain_unincluded_children false
 \language english
@@ -63,7 +27,6 @@
 \bibtex_command default
 \index_command default
 \paperfontsize default
-\spacing single
 \use_hyperref false
 \papersize default
 \use_geometry false
@@ -107,62 +70,12 @@
 
 \begin_body
 
-\begin_layout Standard
-\begin_inset CommandInset include
-LatexCommand input
-filename "Introducción/Introducción.lyx"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset include
-LatexCommand input
-filename "Ej1/Ej1.lyx"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset include
-LatexCommand input
-filename "Ej 2/ej 2.lyx"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset include
-LatexCommand input
-filename "Ej 3/ej 3.lyx"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset include
-LatexCommand input
-filename "Conclusion/conclusion.lyx"
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Section
 Anexo
 \end_layout
 
 \begin_layout Subsection
-Filtro notch: medici
+Filtro notch pasivo: medici
 \begin_inset ERT
 status open
 
@@ -179,7 +92,6 @@ respuesta en frecuencia
 \end_layout
 
 \begin_layout Standard
-\align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="34" columns="5">
 <features tabularvalignment="middle">
@@ -290,9 +202,9 @@ status open
 
 $
 \backslash
-phase{H} (^{
+phase{H} (
 \backslash
-circ}) $
+text{°}) $
 \end_layout
 
 \end_inset
@@ -3863,14 +3775,10 @@ circ}) $
 \end_inset
 
 
-\begin_inset Newpage pagebreak
-\end_inset
-
-
 \end_layout
 
 \begin_layout Subsection
-Filtro pasabajos: 
+Filtro pasabajos pasivo: 
 \begin_inset ERT
 status open
 
@@ -3889,7 +3797,7 @@ respuesta en frecuencia
 \begin_layout Standard
 \begin_inset Tabular
 <lyxtabular version="3" rows="51" columns="5">
-<features islongtable="true" longtabularalignment="center">
+<features tabularvalignment="middle">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
@@ -3997,9 +3905,9 @@ status open
 
 $
 \backslash
-phase{H} (^{
+phase{H} (
 \backslash
-circ}) $
+text{°}) $
 \end_layout
 
 \end_inset
@@ -5249,7 +5157,7 @@ circ}) $
 \uwave off
 \noun off
 \color none
-9.60
+9.6
 \end_layout
 
 \end_inset
@@ -7389,7 +7297,7 @@ circ}) $
 \uwave off
 \noun off
 \color none
-9.4
+9.40
 \end_layout
 
 \end_inset
@@ -7817,7 +7725,7 @@ circ}) $
 \uwave off
 \noun off
 \color none
-9.30
+9.3
 \end_layout
 
 \end_inset

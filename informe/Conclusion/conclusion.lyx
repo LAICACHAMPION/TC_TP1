@@ -111,12 +111,18 @@ Conclusión
 \end_layout
 
 \begin_layout Standard
-Se armaron dos filtros pasivos: un notch de segundo orden con 
-\begin_inset Formula $f_{0}\text{=10.8kHz y un pasabajos de primer orden con frecuencia de corte en 64kHz}$
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Se armaron dos filtros pasivos: un notch de segundo orden con $f_0=10.8kHz$
+ y un pasabajos de primer orden con frecuencia de corte en 64kHz.
+\end_layout
+
 \end_inset
 
-.
- 
+
 \end_layout
 
 \begin_layout Standard
