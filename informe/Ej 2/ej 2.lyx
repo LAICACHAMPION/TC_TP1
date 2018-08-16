@@ -116,7 +116,7 @@ Filtro pasabajos pasivo
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -253,7 +253,7 @@ yTerminalBottom)
 
 \begin_layout Plain Layout
 
-            to[open,v^>=$V_g(t)$,o-o]   (
+            to[open,v^<=$V_g(t)$,o-o]   (
 \backslash
 xPortLeft,
 \backslash
@@ -524,7 +524,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename imagenes/espectro senial cuadrada 32K.PNG
-	scale 70
+	scale 60
 
 \end_inset
 
@@ -899,13 +899,13 @@ t
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
 	filename imagenes/serie cuadrada.PNG
-	scale 70
+	scale 60
 
 \end_inset
 
@@ -1022,20 +1022,82 @@ SIMULACIONES Y MEDICIONES
 \end_layout
 
 \begin_layout Standard
-Se midi
+\align center
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenes/simulacion montecarlo pasabajos rc 64k.PNG
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Análisis de Montecarlo del filtro tomando tolerancia del 5% para la resistencia
+ y del 10% para el capacitor 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:montecarlo"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El análisis de Montecarlo (figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:montecarlo"
+
+\end_inset
+
+) muestra que, con una resistencia de tolerancia 5% y un capacitor de tolerancia
+ 10%, 
 \begin_inset ERT
 status open
 
 \begin_layout Plain Layout
 
-
-\backslash
-'o
+$f_0$
 \end_layout
 
 \end_inset
 
- la respuesta en frecuencia del circuito.
+ puede estar entre 50Hz y 80Hz aproximadamente.
+ Esto incluye a la 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$f_0$
+\end_layout
+
+\end_inset
+
+ calculada inicialmente (67.7KHz)
 \end_layout
 
 \begin_layout Standard
@@ -1050,7 +1112,7 @@ status collapsed
 \align center
 \begin_inset Graphics
 	filename imagenes/bode.png
-	scale 50
+	scale 57
 
 \end_inset
 
@@ -1061,8 +1123,10 @@ status collapsed
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Respuesta en frecuencia del filtro
-\end_layout
+Respuesta en frecuencia del filtro 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:rta_frecuencia"
 
 \end_inset
 
@@ -1072,6 +1136,49 @@ Respuesta en frecuencia del filtro
 \end_inset
 
 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En la respuesta en frecuencia del circuito (figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:rta_frecuencia"
+
+\end_inset
+
+) se observa que la frecuencia de corte 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$f_0$
+\end_layout
+
+\end_inset
+
+ del filtro está en los 67KHz aproximadamente, ya que ahí la ganancia es
+ ~3dB y el desfasaje -45
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$^
+\backslash
+circ$
+\end_layout
+
+\end_inset
+
+.
+ Este valor tambien está incluido dentro del rango de valores posibles obtenido
+ del análisis de Montecarlo.
 \end_layout
 
 \begin_layout Standard
@@ -1096,7 +1203,7 @@ textbf{Entrada a 32KHz:}
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -1145,7 +1252,7 @@ n respuesta del filtro RC a 32KHz
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -1339,7 +1446,7 @@ yTerminalBottom)
 
 \begin_layout Plain Layout
 
-            to[open,v^>=$V_g(t)$,o-o]   (
+            to[open,v^<=$V_g(t)$,o-o]   (
 \backslash
 xPortLeft,
 \backslash
@@ -1692,7 +1799,7 @@ textbf{Entrada a 32KHz:}
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -1741,7 +1848,7 @@ n respuesta del filtro RC a 640KHz
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -1873,7 +1980,7 @@ reference "fig:aprox_lineal_carga"
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
