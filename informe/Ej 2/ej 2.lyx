@@ -509,7 +509,7 @@ V_{C}=V_{g}(1-e^{-\frac{t}{RC}})
 \end_layout
 
 \begin_layout Subsection
-ANALISIS ESPECTRAL
+Análisis espectral
 \end_layout
 
 \begin_layout Standard
@@ -1018,7 +1018,11 @@ status open
 \end_layout
 
 \begin_layout Subsection
-SIMULACIONES Y MEDICIONES
+Simulaciones y mediciones
+\end_layout
+
+\begin_layout Subsubsection
+Respuesta en frecuencia
 \end_layout
 
 \begin_layout Standard
@@ -1027,7 +1031,7 @@ SIMULACIONES Y MEDICIONES
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -1181,20 +1185,8 @@ circ$
  del análisis de Montecarlo.
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-textbf{Entrada a 32KHz:}
-\end_layout
-
-\end_inset
-
-
+\begin_layout Subsubsection
+Entrada a 32KHz
 \end_layout
 
 \begin_layout Standard
@@ -1203,7 +1195,7 @@ textbf{Entrada a 32KHz:}
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -1252,7 +1244,7 @@ n respuesta del filtro RC a 32KHz
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -1446,7 +1438,7 @@ yTerminalBottom)
 
 \begin_layout Plain Layout
 
-            to[open,v^<=$V_g(t)$,o-o]   (
+            to[open,v^>=$V_g(t)$,o-o]   (
 \backslash
 xPortLeft,
 \backslash
@@ -1777,20 +1769,8 @@ El an
 
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-textbf{Entrada a 32KHz:}
-\end_layout
-
-\end_inset
-
-
+\begin_layout Subsubsection
+Entrada a 640KHz
 \end_layout
 
 \begin_layout Standard
@@ -1799,7 +1779,7 @@ textbf{Entrada a 32KHz:}
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -1980,7 +1960,7 @@ reference "fig:aprox_lineal_carga"
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -2046,7 +2026,7 @@ name "fig:aprox_lineal_carga"
 \end_layout
 
 \begin_layout Subsection
-USO COMO INTEGRADOR
+Uso como integrador
 \end_layout
 
 \begin_layout Standard
